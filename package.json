@@ -18,7 +18,17 @@
     "@angular/platform-browser": "^17.3.0",
     "@angular/platform-browser-dynamic": "^17.3.0",
     "@angular/router": "^17.3.0",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.13",
+    "angular-svg-icon": "^18.0.1",
+    "apexcharts": "^3.50.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "ng-apexcharts": "^1.11.0",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.5",
     "rxjs": "~7.8.0",
+    "tailwind-scrollbar": "^3.1.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
   },
@@ -27,12 +37,15 @@
     "@angular/cli": "^17.3.8",
     "@angular/compiler-cli": "^17.3.0",
     "@types/jasmine": "~5.1.0",
+    "autoprefixer": "^10.4.19",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "postcss": "^8.4.39",
+    "tailwindcss": "^3.4.6",
     "typescript": "~5.4.2"
   }
 }

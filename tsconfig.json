@@ -20,7 +20,8 @@
     "paths": {
       "@constants/*":["app/core/constants/*"],
       "@models/*":["app/core/models/*"],
-      "@service/*":["app/core/services/*"]
+      "@service/*":["app/core/services/*"],
+      "@directive/*":["app/shared/directives/*"]
     },
     "module": "ES2022",
     "useDefineForClassFields": false,
