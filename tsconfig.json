@@ -18,17 +18,18 @@
     "importHelpers": true,
     "target": "ES2022",
     "paths": {
-      "@constants/*":["app/core/constants/*"],
-      "@models/*":["app/core/models/*"],
-      "@service/*":["app/core/services/*"],
-      "@directive/*":["app/shared/directives/*"]
+      "@constants/*": ["app/core/constants/*"],
+      "@models/*": ["app/core/models/*"],
+      "@service/*": ["app/core/services/*"],
+      "@directive/*": ["app/shared/directives/*"],
+      "@auth/*": ["app/modules/auth/*"],
+      "@dashboard/*": ["app/modules/dashboard/*"],
+      "@landing/*": ["app/modules/landing/*"],
+      "@layout/*": ["app/modules/layout/*"]
     },
     "module": "ES2022",
     "useDefineForClassFields": false,
-    "lib": [
-      "ES2022",
-      "dom"
-    ]
+    "lib": ["ES2022", "dom"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
