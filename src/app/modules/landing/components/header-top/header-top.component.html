@@ -1,0 +1,38 @@
+<div
+  class="block py-[10px] px-0 border-b-[1px] border-[var(--cultured)]"
+>
+  <div class="container md:flex justify-between items-center">
+    <ul class="flex items-center gap-[5px] justify-center">
+      @for (item of icons; track $index) {
+        <li>
+          <a
+            href="#"
+            class="p-[5px] bg-[#f2f2f2] rounded-[var(--border-radius-sm)] flex text-[var(--sonic-silver)] transition-[ var(--transition-timing)] hover:bg-pink-500 hover:text-white"
+          >
+            <svg-icon [src]="item" [svgStyle]="{ 'width.px': 20 }"></svg-icon>
+          </a>
+        </li>
+      }
+    </ul>
+
+    <div class="hidden md:block md:text-[var(--sonic-silver)] md:text-sm  md:uppercase"> 
+      <p>
+        <b class="bold">Free Shipping</b>
+        This Week Order Over - $55
+      </p>
+    </div>
+
+    <!-- <div class="header-top-actions xxs:hidden xs:flex xs:items-center xs:gap-[10px]">
+      <select name="currency">
+        <option value="usd">USD &dollar;</option>
+        <option value="eur">EUR &euro;</option>
+      </select>
+
+      <select name="language">
+        <option value="en-US">English</option>
+        <option value="es-ES">Espa&ntilde;ol</option>
+        <option value="fr">Fran&ccedil;ais</option>
+      </select>
+    </div> -->
+  </div>
+</div>

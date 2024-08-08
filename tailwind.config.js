@@ -8,6 +8,23 @@ module.exports = {
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
+      screens: {
+        xxs: "480px",
+        xs: "570px",
+      },
+      fontSize: {
+        xxs: "var( --fs-11)",
+        xs: "var( --fs-10)",
+        sm: "var( --fs-9)",
+        xxm: "var( --fs-8)",
+        xm: "var( --fs-7)",
+        md: "var(--fs-6)",
+        base: "var(--fs-5)",
+        lg: "var( --fs-4)",
+        xl: "var( --fs-3)",
+        xxl: "var( --fs-2)",
+        "2xl": "var( --fs-1)",
+      },
       keyframes: {
         wiggle: {
           '0%, 100%': { transform: 'rotate(-3deg)' },
@@ -65,7 +82,7 @@ module.exports = {
         custom: '0px 0px 50px 0px rgb(82 63 105 / 15%)',
       },
       colors: {
-        primary: colors.green,
+        primary: colors.pink,
         night: {
           50: '#e4e4eb',
           100: '#bbbace',

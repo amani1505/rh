@@ -1,0 +1,844 @@
+<div
+  class=" px-0 border-b-[1px] border-[var(--cultured)] pb-[25px] md:pt-[25px]"
+>
+  <div
+    class="container xs:flex xs:justify-between xs:items-center md:gap-[80px]"
+  >
+    <a href="#" class="mb-[20px]">
+      <img
+        src="./assets/logo/logo.svg"
+        alt="logo"
+        width="40"
+        height="50"
+        class="mx-auto my-5 lg:m-auto"
+      />
+    </a>
+
+    <div class="relative xs:min-w-[300px] md:flex-grow-[1]">
+      <input
+        type="search"
+        name="search"
+        class="text-[var(--onyx)] text-xm py-[10px] px-[15px] pr-[50px] border-[1px] border-[var(--cultured)] search-field"
+        placeholder="Enter your product name..."
+      />
+
+      <button class="search-btn">
+        <svg-icon
+          src="./assets/icons/heroicons/search-outline.svg"
+          [svgStyle]="{ 'width.px': 20 }"
+        ></svg-icon>
+      </button>
+    </div>
+
+    <div class="hidden lg:flex lg:items-center lg:gap-[15px]">
+      <button class="lg:relative lg:text-[var(--onyx)] lg:p-[5px]">
+        <svg-icon
+          src="./assets/icons/heroicons/person-outline.svg"
+          [svgStyle]="{ 'width.px': 35 }"
+        ></svg-icon>
+      </button>
+
+      <button class="lg:relative lg:text-[var(--onyx)] lg:p-[5px]">
+        <svg-icon
+          src="./assets/icons/heroicons/heart-outline.svg"
+          [svgStyle]="{ 'width.px': 35 }"
+        ></svg-icon>
+
+        <span
+          class="count lg:absolute lg:-top-[2px] lg:-right-[3px] lg:bg-pink-500 lg:text-white lg:py-[2px] lg:px-[4px] rounded-[20px]"
+          >0</span
+        >
+      </button>
+
+      <button class="lg:relative lg:text-[var(--onyx)] lg:p-[5px]">
+        <svg-icon
+          src="./assets/icons/heroicons/bag-handle-outline.svg"
+          [svgStyle]="{ 'width.px': 35 }"
+        ></svg-icon>
+
+        <span
+          class="count lg:absolute lg:-top-[2px] lg:-right-[3px] lg:bg-pink-500 lg:text-white lg:py-[2px] lg:px-[4px] rounded-[20px]"
+          >0</span
+        >
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ==================================================================================================================
+                                             DESKTOP NAVIGATON
+======================================================================================================================-->
+
+<nav class="hidden lg:block">
+  <div class="container">
+    <ul
+      class="desktop-menu-category-list lg:py-4 lg:relative lg:flex lg:justify-center lg:items-center lg:gap-[30px]"
+    >
+      <li class="menu-category">
+        <a href="#" class="menu-title">Home</a>
+      </li>
+
+      <li class="menu-category">
+        <a href="#" class="menu-title">Categories</a>
+
+        <div class="dropdown-panel">
+          <ul class="dropdown-panel-list">
+            <li class="menu-title">
+              <a href="#">Electronics</a>
+            </li>
+
+            <li class="panel-list-item">
+              <a
+                href="#"
+                class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:transition-[var(--transition-timing)] lg:hove lg:hover:text-[var(--salmon-pink)]"
+                >Desktop</a
+              >
+            </li>
+
+            <li class="panel-list-item">
+              <a
+                href="#"
+                class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:transition-[var(--transition-timing)] lg:hove lg:hover:text-[var(--salmon-pink)]"
+                >Laptop</a
+              >
+            </li>
+
+            <li class="panel-list-item">
+              <a
+                href="#"
+                class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:transition-[var(--transition-timing)] lg:hove lg:hover:text-[var(--salmon-pink)]"
+                >Camera</a
+              >
+            </li>
+
+            <li class="panel-list-item">
+              <a
+                href="#"
+                class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:transition-[var(--transition-timing)] lg:hove lg:hover:text-[var(--salmon-pink)]"
+                >Tablet</a
+              >
+            </li>
+
+            <li class="panel-list-item">
+              <a
+                href="#"
+                class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:transition-[var(--transition-timing)] lg:hove lg:hover:text-[var(--salmon-pink)]"
+                >Headphone</a
+              >
+            </li>
+
+            <li class="panel-list-item">
+              <a
+                href="#"
+                class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:transition-[var(--transition-timing)] lg:hove lg:hover:text-[var(--salmon-pink)]"
+              >
+                <img
+                  src="./assets/images/electronics-banner-1.jpg"
+                  alt="headphone collection"
+                  width="250"
+                  height="119"
+                  class="lg:w-full lg:h-auto lg:rounded-[var(--border-radius-sm)]"
+                />
+              </a>
+            </li>
+          </ul>
+
+          <ul class="dropdown-panel-list">
+            <li class="menu-title">
+              <a href="#">Men's</a>
+            </li>
+
+            <li class="panel-list-item">
+              <a
+                href="#"
+                class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:transition-[var(--transition-timing)] lg:hove lg:hover:text-[var(--salmon-pink)]"
+                >Formal</a
+              >
+            </li>
+
+            <li class="panel-list-item">
+              <a
+                href="#"
+                class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:transition-[var(--transition-timing)] lg:hove lg:hover:text-[var(--salmon-pink)]"
+                >Casual</a
+              >
+            </li>
+
+            <li class="panel-list-item">
+              <a
+                href="#"
+                class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:transition-[var(--transition-timing)] lg:hove lg:hover:text-[var(--salmon-pink)]"
+                >Sports</a
+              >
+            </li>
+
+            <li class="panel-list-item">
+              <a
+                href="#"
+                class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:transition-[var(--transition-timing)] lg:hove lg:hover:text-[var(--salmon-pink)]"
+                >Jacket</a
+              >
+            </li>
+
+            <li class="panel-list-item">
+              <a
+                href="#"
+                class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:transition-[var(--transition-timing)] lg:hove lg:hover:text-[var(--salmon-pink)]"
+                >Sunglasses</a
+              >
+            </li>
+
+            <li class="panel-list-item">
+              <a
+                href="#"
+                class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:transition-[var(--transition-timing)] lg:hove lg:hover:text-[var(--salmon-pink)]"
+              >
+                <img
+                  src="./assets/images/mens-banner.jpg"
+                  alt="men's fashion"
+                  width="250"
+                  height="119"
+                  class="lg:w-full lg:h-auto lg:rounded-[var(--border-radius-sm)]"
+                />
+              </a>
+            </li>
+          </ul>
+
+          <ul class="dropdown-panel-list">
+            <li class="menu-title">
+              <a href="#">Women's</a>
+            </li>
+
+            <li class="panel-list-item">
+              <a
+                href="#"
+                class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:transition-[var(--transition-timing)] lg:hove lg:hover:text-[var(--salmon-pink)]"
+                >Formal</a
+              >
+            </li>
+
+            <li class="panel-list-item">
+              <a
+                href="#"
+                class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:transition-[var(--transition-timing)] lg:hover:text-[var(--salmon-pink)]"
+                >Casual</a
+              >
+            </li>
+
+            <li class="panel-list-item">
+              <a
+                href="#"
+                class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:transition-[var(--transition-timing)] lg:hover:text-[var(--salmon-pink)]"
+                >Perfume</a
+              >
+            </li>
+
+            <li class="panel-list-item">
+              <a
+                href="#"
+                class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:transition-[var(--transition-timing)] lg:hover:text-[var(--salmon-pink)]"
+                >Cosmetics</a
+              >
+            </li>
+
+            <li class="panel-list-item">
+              <a
+                href="#"
+                class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:transition-[var(--transition-timing)] lg:hover:text-[var(--salmon-pink)]"
+                >Bags</a
+              >
+            </li>
+
+            <li class="panel-list-item">
+              <a
+                href="#"
+                class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:transition-[var(--transition-timing)] lg:hover:text-[var(--salmon-pink)]"
+              >
+                <img
+                  src="./assets/images/womens-banner.jpg"
+                  alt="women's fashion"
+                  width="250"
+                  height="119"
+                  class="lg:w-full lg:h-auto lg:rounded-[var(--border-radius-sm)]"
+                />
+              </a>
+            </li>
+          </ul>
+
+          <ul class="dropdown-panel-list">
+            <li class="menu-title">
+              <a href="#">Electronics</a>
+            </li>
+
+            <li class="panel-list-item">
+              <a
+                href="#"
+                class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:transition-[var(--transition-timing)] lg:hover:text-[var(--salmon-pink)]"
+                >Smart Watch</a
+              >
+            </li>
+
+            <li class="panel-list-item">
+              <a
+                href="#"
+                class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:transition-[var(--transition-timing)] lg:hover:text-[var(--salmon-pink)]"
+                >Smart TV</a
+              >
+            </li>
+
+            <li class="panel-list-item">
+              <a
+                href="#"
+                class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:transition-[var(--transition-timing)] lg:hover:text-[var(--salmon-pink)]"
+                >Keyboard</a
+              >
+            </li>
+
+            <li class="panel-list-item">
+              <a
+                href="#"
+                class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:transition-[var(--transition-timing)] lg:hover:text-[var(--salmon-pink)]"
+                >Mouse</a
+              >
+            </li>
+
+            <li class="panel-list-item">
+              <a
+                href="#"
+                class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:transition-[var(--transition-timing)] lg:hover:text-[var(--salmon-pink)]"
+                >Microphone</a
+              >
+            </li>
+
+            <li class="panel-list-item">
+              <a
+                href="#"
+                class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:transition-[var(--transition-timing)] lg:hover:text-[var(--salmon-pink)]"
+              >
+                <img
+                  src="./assets/images/electronics-banner-2.jpg"
+                  alt="mouse collection"
+                  width="250"
+                  height="119"
+                  class="lg:w-full lg:h-auto lg:rounded-[var(--border-radius-sm)]"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="menu-category">
+        <a href="#" class="menu-title">Men's</a>
+
+        <ul class="dropdown-list lg:mt-4">
+          <li>
+            <a
+              href="#"
+              class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:py-[4px] lg:px-[20px] transition-[var(--transition-timing)] lg:hover:text-[var(--salmon-pink)]"
+              >Shirt</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="#"
+              class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:py-[4px] lg:px-[20px] transition-[var(--transition-timing)] lg:hover:text-[var(--salmon-pink)]"
+              >Shorts & Jeans</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="#"
+              class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:py-[4px] lg:px-[20px] transition-[var(--transition-timing)] lg:hover:text-[var(--salmon-pink)]"
+              >Safety Shoes</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="#"
+              class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:py-[4px] lg:px-[20px] transition-[var(--transition-timing)] lg:hover:text-[var(--salmon-pink)]"
+              >Wallet</a
+            >
+          </li>
+        </ul>
+      </li>
+
+      <li class="menu-category">
+        <a href="#" class="menu-title">Women's</a>
+
+        <ul class="dropdown-list lg:mt-4">
+          <li>
+            <a
+              href="#"
+              class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:py-[4px] lg:px-[20px] transition-[var(--transition-timing)] lg:hover:text-[var(--salmon-pink)]"
+              >Dress & Frock</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="#"
+              class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:py-[4px] lg:px-[20px] transition-[var(--transition-timing)] lg:hover:text-[var(--salmon-pink)]"
+              >Earrings</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="#"
+              class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:py-[4px] lg:px-[20px] transition-[var(--transition-timing)] lg:hover:text-[var(--salmon-pink)]"
+              >Necklace</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="#"
+              class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:py-[4px] lg:px-[20px] transition-[var(--transition-timing)] lg:hover:text-[var(--salmon-pink)]"
+              >Makeup Kit</a
+            >
+          </li>
+        </ul>
+      </li>
+
+      <li class="menu-category">
+        <a href="#" class="menu-title">Jewelry</a>
+
+        <ul class="dropdown-list lg:mt-4">
+          <li>
+            <a
+              href="#"
+              class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:py-[4px] lg:px-[20px] transition-[var(--transition-timing)] lg:hover:text-[var(--salmon-pink)]"
+              >Earrings</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="#"
+              class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:py-[4px] lg:px-[20px] transition-[var(--transition-timing)] lg:hover:text-[var(--salmon-pink)]"
+              >Couple Rings</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="#"
+              class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:py-[4px] lg:px-[20px] transition-[var(--transition-timing)] lg:hover:text-[var(--salmon-pink)]"
+              >Necklace</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="#"
+              class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:py-[4px] lg:px-[20px] transition-[var(--transition-timing)] lg:hover:text-[var(--salmon-pink)]"
+              >Bracelets</a
+            >
+          </li>
+        </ul>
+      </li>
+
+      <li class="menu-category">
+        <a href="#" class="menu-title">Perfume</a>
+
+        <ul class="dropdown-list lg:mt-4">
+          <li>
+            <a
+              href="#"
+              class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:py-[4px] lg:px-[20px] transition-[var(--transition-timing)] lg:hover:text-[var(--salmon-pink)]"
+              >Clothes Perfume</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="#"
+              class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:py-[4px] lg:px-[20px] transition-[var(--transition-timing)] lg:hover:text-[var(--salmon-pink)]"
+              >Deodorant</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="#"
+              class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:py-[4px] lg:px-[20px] transition-[var(--transition-timing)] lg:hover:text-[var(--salmon-pink)]"
+              >Flower Fragrance</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="#"
+              class="lg:text-[var(--sonic-silver)] lg:text-xm lg:capitalize lg:py-[4px] lg:px-[20px] transition-[var(--transition-timing)] lg:hover:text-[var(--salmon-pink)]"
+              >Air Freshener</a
+            >
+          </li>
+        </ul>
+      </li>
+
+      <li class="menu-category">
+        <a href="#" class="menu-title">Blog</a>
+      </li>
+
+      <li class="menu-category">
+        <a href="#" class="menu-title">Hot Offers</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ==================================================================================================================
+                                             MOBILE BOTTOM  NAVIGATON
+======================================================================================================================-->
+
+<div class="mobile-bottom-navigation lg:hidden">
+  <button class="action-btn" (click)="toggleMobileMenu()">
+    <svg-icon
+      src="./assets/icons/heroicons/menu-outline.svg"
+      [svgStyle]="{ 'width.px': 35 }"
+    ></svg-icon>
+  </button>
+
+  <button class="action-btn">
+    <svg-icon
+      src="./assets/icons/heroicons/bag-handle-outline.svg"
+      [svgStyle]="{ 'width.px': 35 }"
+    ></svg-icon>
+
+    <span class="count">0</span>
+  </button>
+
+  <button class="action-btn">
+    <svg-icon
+      src="./assets/icons/heroicons/home-outline.svg"
+      [svgStyle]="{ 'width.px': 35 }"
+    ></svg-icon>
+  </button>
+
+  <button class="action-btn">
+    <svg-icon
+      src="./assets/icons/heroicons/heart-outline.svg"
+      [svgStyle]="{ 'width.px': 35 }"
+    ></svg-icon>
+
+    <span class="count">0</span>
+  </button>
+
+  <button class="action-btn" (click)="toggleMobileMenu()">
+    <svg-icon
+      src="./assets/icons/heroicons/grid-outline.svg"
+      [svgStyle]="{ 'width.px': 35 }"
+    ></svg-icon>
+  </button>
+</div>
+
+<!-- ==================================================================================================================
+                                             MOBILe  NAVIGATON
+======================================================================================================================-->
+
+<nav
+  class="mobile-navigation-menu has-scrollbar"
+  [class.active]="isMobileMenuActive"
+>
+  <div
+    class="menu-top pb-[15px] mb-[10px] flex justify-between items-center border-b-[2px] border-[var(--cultured)]"
+  >
+    <h2 class="menu-title text-[ var(--salmon-pink)] text-md">Menu</h2>
+
+    <button class="menu-close-btn" (click)="toggleMobileMenu()">
+      <svg-icon
+        src="./assets/icons/heroicons/close-outline.svg"
+        [svgStyle]="{ 'width.px': 25 }"
+      ></svg-icon>
+    </button>
+  </div>
+
+  <ul class="mobile-menu-category-list mb-[30px]">
+    <li class="menu-category py-3 border-b-[1px] border-[var(--cultured)]">
+      <a href="#" class="menu-title">Home</a>
+    </li>
+
+    <li class="menu-category border-b-[1px] border-[var(--cultured)]">
+      <button class="accordion-menu"  [class.active]="menu" (click)="open()">
+        <p class="menu-title">Men's</p>
+
+        <div>
+          <svg-icon
+            src="./assets/icons/heroicons/add-outline.svg"
+            class="add-icon"
+            [svgStyle]="{ 'width.px': 25 }"
+          ></svg-icon>
+          <svg-icon
+            src="./assets/icons/heroicons/remove-outline.svg"
+            class="remove-icon"
+            [svgStyle]="{ 'width.px': 25 }"
+          ></svg-icon>
+        </div>
+      </button>
+
+      <ul class="submenu-category-list"  [class.active]="menu">
+        <li class="submenu-category">
+          <a href="#" class="submenu-title ">Shirt</a>
+        </li>
+
+        <li class="submenu-category">
+          <a href="#" class="submenu-title">Shorts & Jeans</a>
+        </li>
+
+        <li class="submenu-category">
+          <a href="#" class="submenu-title">Safety Shoes</a>
+        </li>
+
+        <li class="submenu-category">
+          <a href="#" class="submenu-title">Wallet</a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="menu-category border-b-[1px] border-[var(--cultured)]">
+      <button class="accordion-menu" data-accordion-btn>
+        <p class="menu-title">Women's</p>
+
+        <div>
+          <svg-icon
+            src="./assets/icons/heroicons/add-outline.svg"
+            class="add-icon"
+            [svgStyle]="{ 'width.px': 25 }"
+          ></svg-icon>
+          <svg-icon
+            src="./assets/icons/heroicons/remove-outline.svg"
+            class="remove-icon"
+            [svgStyle]="{ 'width.px': 25 }"
+          ></svg-icon>
+        </div>
+      </button>
+
+      <ul class="submenu-category-list" data-accordion>
+        <li class="submenu-category">
+          <a href="#" class="submenu-title">Dress & Frock</a>
+        </li>
+
+        <li class="submenu-category">
+          <a href="#" class="submenu-title">Earrings</a>
+        </li>
+
+        <li class="submenu-category">
+          <a href="#" class="submenu-title">Necklace</a>
+        </li>
+
+        <li class="submenu-category">
+          <a href="#" class="submenu-title">Makeup Kit</a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="menu-category border-b-[1px] border-[var(--cultured)]">
+      <button class="accordion-menu" data-accordion-btn>
+        <p class="menu-title">Jewelry</p>
+
+        <div>
+          <svg-icon
+            src="./assets/icons/heroicons/add-outline.svg"
+            class="add-icon"
+            [svgStyle]="{ 'width.px': 25 }"
+          ></svg-icon>
+          <svg-icon
+            src="./assets/icons/heroicons/remove-outline.svg"
+            class="remove-icon"
+            [svgStyle]="{ 'width.px': 25 }"
+          ></svg-icon>
+        </div>
+      </button>
+
+      <ul class="submenu-category-list" data-accordion>
+        <li class="submenu-category">
+          <a href="#" class="submenu-title">Earrings</a>
+        </li>
+
+        <li class="submenu-category">
+          <a href="#" class="submenu-title">Couple Rings</a>
+        </li>
+
+        <li class="submenu-category">
+          <a href="#" class="submenu-title">Necklace</a>
+        </li>
+
+        <li class="submenu-category">
+          <a href="#" class="submenu-title">Bracelets</a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="menu-category border-b-[1px] border-[var(--cultured)]">
+      <button class="accordion-menu" data-accordion-btn>
+        <p class="menu-title">Perfume</p>
+
+        <div>
+          <svg-icon
+            src="./assets/icons/heroicons/add-outline.svg"
+            class="add-icon"
+            [svgStyle]="{ 'width.px': 25 }"
+          ></svg-icon>
+          <svg-icon
+            src="./assets/icons/heroicons/remove-outline.svg"
+            class="remove-icon"
+            [svgStyle]="{ 'width.px': 25 }"
+          ></svg-icon>
+        </div>
+      </button>
+
+      <ul class="submenu-category-list" data-accordion>
+        <li class="submenu-category">
+          <a href="#" class="submenu-title">Clothes Perfume</a>
+        </li>
+
+        <li class="submenu-category">
+          <a href="#" class="submenu-title">Deodorant</a>
+        </li>
+
+        <li class="submenu-category">
+          <a href="#" class="submenu-title">Flower Fragrance</a>
+        </li>
+
+        <li class="submenu-category">
+          <a href="#" class="submenu-title">Air Freshener</a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="menu-category py-3 border-b-[1px] border-[var(--cultured)]">
+      <a href="#" class="menu-title">Blog</a>
+    </li>
+
+    <li class="menu-category py-3 border-b-[1px] border-[var(--cultured)]">
+      <a href="#" class="menu-title">Hot Offers</a>
+    </li>
+  </ul>
+
+  <!-- <ul class="mobile-menu-category-list">
+      <li class="menu-category" *ngFor="let category of categories">
+        <div class="accordion-menu" (click)="toggleAccordion(category)">
+          <div>{{ category.title }}</div>
+          <svg-icon src="./assets/icons/heroicons/chevron-down-outline.svg" [class.caret-back]="category.isOpen"></svg-icon>
+        </div>
+        <ul class="submenu-category-list" [class.active]="category.isOpen">
+          <li class="submenu-category-list-item" *ngFor="let item of category.items">
+            <a href="#" class="submenu-title">{{ item }}</a>
+          </li>
+          <li *ngIf="category.image">
+            <a href="#">
+              <img [src]="category.image" alt="category image" class="lg:w-full lg:h-auto lg:rounded-[var(--border-radius-sm)]" />
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul> -->
+
+  <div class="menu-bottom">
+    <ul class="menu-category-list">
+      <li class="menu-category">
+        <button class="accordion-menu" data-accordion-btn>
+          <p class="menu-title">Language</p>
+          <svg-icon
+            src="./assets/icons/heroicons/caret-back-outline.svg"
+            class="remove-icon"
+            [svgStyle]="{ 'width.px': 25 }"
+          ></svg-icon>
+        </button>
+
+        <ul class="submenu-category-list" data-accordion>
+          <li class="submenu-category">
+            <a href="#" class="submenu-title">English</a>
+          </li>
+
+          <li class="submenu-category">
+            <a href="#" class="submenu-title">Espa&ntilde;ol</a>
+          </li>
+
+          <li class="submenu-category">
+            <a href="#" class="submenu-title">Fren&ccedil;h</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="menu-category">
+        <button class="accordion-menu" data-accordion-btn>
+          <p class="menu-title">Currency</p>
+          <svg-icon
+            src="./assets/icons/heroicons/caret-back-outline.svg"
+            class="remove-icon"
+            [svgStyle]="{ 'width.px': 25 }"
+          ></svg-icon>
+        </button>
+
+        <ul class="submenu-category-list" data-accordion>
+          <li class="submenu-category">
+            <a href="#" class="submenu-title">USD &dollar;</a>
+          </li>
+
+          <li class="submenu-category">
+            <a href="#" class="submenu-title">EUR &euro;</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <ul class="flex items-center gap-[5px]">
+      <li>
+        <a
+          href="#"
+          class="p-[5px] bg-[#f2f2f2] rounded-[var(--border-radius-sm)] flex text-[var(--sonic-silver)] transition-[ var(--transition-timing)] hover:bg-[var(--salmon-pink)] hover:text-white"
+        >
+          <svg-icon
+            src="./assets/icons/ionicons/logo-facebook.svg"
+            class="remove-icon"
+            [svgStyle]="{ 'width.px': 25 }"
+          ></svg-icon>
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="#"
+          class="p-[5px] bg-[#f2f2f2] rounded-[var(--border-radius-sm)] flex text-[var(--sonic-silver)] transition-[ var(--transition-timing)] hover:bg-[var(--salmon-pink)] hover:text-white"
+        >
+          <svg-icon
+            src="./assets/icons/ionicons/logo-twitter.svg"
+            class="remove-icon"
+            [svgStyle]="{ 'width.px': 25 }"
+          ></svg-icon>
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="#"
+          class="p-[5px] bg-[#f2f2f2] rounded-[var(--border-radius-sm)] flex text-[var(--sonic-silver)] transition-[ var(--transition-timing)] hover:bg-[var(--salmon-pink)] hover:text-white"
+        >
+          <svg-icon
+            src="./assets/icons/ionicons/logo-instagram.svg"
+            class="remove-icon"
+            [svgStyle]="{ 'width.px': 25 }"
+          ></svg-icon>
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="#"
+          class="p-[5px] bg-[#f2f2f2] rounded-[var(--border-radius-sm)] flex text-[var(--sonic-silver)] transition-[ var(--transition-timing)] hover:bg-[var(--salmon-pink)] hover:text-white"
+        >
+          <svg-icon
+            src="./assets/icons/ionicons/logo-linkedin.svg"
+            class="remove-icon"
+            [svgStyle]="{ 'width.px': 25 }"
+          ></svg-icon>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

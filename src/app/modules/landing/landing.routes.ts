@@ -1,3 +1,8 @@
 import { Routes } from "@angular/router";
+import { LandingComponent } from "./landing.component";
 
-export default [] as Routes
+export default [{
+path:"",
+component:LandingComponent
+
+}] as Routes
