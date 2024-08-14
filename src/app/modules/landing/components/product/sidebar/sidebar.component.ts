@@ -7,7 +7,7 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
   standalone: true,
   imports: [AngularSvgIconModule, CommonModule],
   templateUrl: './sidebar.component.html',
-  styleUrl: '../product.component.scss'
+  styleUrl: '../../../landing.component.scss'
 })
 export class SidebarComponent {
   showMenu:boolean=false

@@ -7,7 +7,7 @@ import { ProductBoxComponent } from './product-box/product-box.component';
   standalone: true,
   imports: [SidebarComponent,ProductBoxComponent],
   templateUrl: './product.component.html',
-  styleUrl: './product.component.scss'
+  styleUrl: '../../landing.component.scss'
 })
 export class ProductComponent {
 
