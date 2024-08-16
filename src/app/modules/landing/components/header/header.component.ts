@@ -7,7 +7,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
   standalone: true,
   imports: [HeaderTopComponent, NavbarComponent],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrl: '../../landing.component.scss'
 })
 export class HeaderComponent {
 

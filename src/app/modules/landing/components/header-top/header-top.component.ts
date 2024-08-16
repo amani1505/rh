@@ -6,7 +6,7 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
   standalone: true,
   imports: [AngularSvgIconModule],
   templateUrl: './header-top.component.html',
-  styleUrl: '../header/header.component.scss',
+  styleUrl: '../../landing.component.scss',
 })
 export class HeaderTopComponent {
   icons: string[] = [
