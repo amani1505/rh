@@ -1,188 +1,251 @@
-<div class="container bg-gray-100 ">
+<div class="container ">
+  <div class="grid  grid-cols-2 lg:grid-cols-3 gap-5 py-5">
+    <div
+      class="w-auto bg-white rounded-lg overflow-hidden showcase group border"
+    >
+      <div class="relative w-full h-48">
+        <img
+          src="./assets/images/products/jacket-3.jpg"
+          alt="Product Image 1"
+          class="w-full h-full object-contain absolute top-0 left-0 product-image default"
+        />
+        <img
+          src="./assets/images/products/jacket-4.jpg"
+          alt="Product Image 2"
+          class="w-full h-full object-contain absolute top-0 left-0 opacity-0 product-image hover"
+        />
 
-<div class="grid grid-cols-4 gap-5 py-5">
-    <div class=" w-auto bg-white  rounded-lg overflow-hidden showcase group border">
-        <div class="relative w-full h-48">
-       <img src="./assets/images/products/jacket-3.jpg" alt="Product Image 1" class="w-full h-full object-contain absolute top-0 left-0 product-image default">
-       <img src="./assets/images/products/jacket-4.jpg" alt="Product Image 2" class="w-full h-full object-contain absolute top-0 left-0 opacity-0 product-image hover">
-   
-       <div class="showcase-badge angle">
-       New
-       </div>
-   
-       <div class="absolute top-2 right-2 opacity-0 icon-container">
-         <button class="btn-action block">          
-             <svg-icon
-       src="./assets/icons/heroicons/heart.svg"
-    
-       [svgStyle]="{ 'width.px': 15 }"
-     ></svg-icon>
-     </button>
+        <div class="absolute top-[15px] left-[15px] bg-[var(--ocean-green)]  text-white px-[8px] rounded-[var(--border-radius-sm)] z-[3] showcase-badge">-20%</div>
 
-     <button class="btn-action block">
-       <svg-icon
-       src="./assets/icons/heroicons/eye.svg"
-  
-       [svgStyle]="{ 'width.px': 15 }"
-     ></svg-icon>
-     </button>
+        <div class="absolute top-2 right-2 opacity-0 icon-container">
+          <button class="btn-action block">
+            <svg-icon
+              src="./assets/icons/heroicons/heart.svg"
+              [svgStyle]="{ 'width.px': 15 }"
+            ></svg-icon>
+          </button>
 
-                <button class="btn-action block">
-    
+          <button class="btn-action block">
+            <svg-icon
+              src="./assets/icons/heroicons/eye.svg"
+              [svgStyle]="{ 'width.px': 15 }"
+            ></svg-icon>
+          </button>
 
-       <svg-icon
-       src="./assets/icons/heroicons/shopping-cart.svg"
- 
-       [svgStyle]="{ 'width.px': 15 }"
-     ></svg-icon>
-     </button>
-       </div>
-     </div>
-     
-     <!-- Description Section -->
-     <div class="p-4 showcase-content">
+          <button class="btn-action block">
+            <svg-icon
+              src="./assets/icons/heroicons/shopping-cart.svg"
+              [svgStyle]="{ 'width.px': 15 }"
+            ></svg-icon>
+          </button>
+        </div>
+      </div>
+
+      <!-- Description Section -->
+      <div class="p-4 showcase-content">
         <a href="#" class="showcase-category">Jacket</a>
-       <p class="text-gray-600 mt-2">This is a brief description of the product, highlighting its key features and benefits.</p>
-       <p class="text-gray-900 font-bold mt-4">$99.99</p>
-     </div>
-   </div>
-   <div class=" w-auto bg-white  rounded-lg overflow-hidden showcase group">
-    <div class="relative w-full h-48">
-   <img src="./assets/images/products/shirt-1.jpg" alt="Product Image 1" class="w-full h-full object-contain absolute top-0 left-0 product-image default">
-   <img src="./assets/images/products/jacket-4.jpg" alt="Product Image 2" class="w-full h-full object-contain absolute top-0 left-0 opacity-0 product-image hover">
+        <h3>
+          <a href="#" class="showcase-title">MEN Yarn Fleece Full-Zip Jacket</a>
+        </h3>
+        <!-- <div class="showcase-rating">
+          <svg-icon
+            src="./assets/icons/heroicons/star.svg"
+            class="remove-icon"
+            [svgStyle]="{ 'width.px': 15 }"
+          ></svg-icon>
+          <svg-icon
+            src="./assets/icons/heroicons/star.svg"
+            class="remove-icon"
+            [svgStyle]="{ 'width.px': 15 }"
+          ></svg-icon>
+          <svg-icon
+            src="./assets/icons/heroicons/star.svg"
+            class="remove-icon"
+            [svgStyle]="{ 'width.px': 15 }"
+          ></svg-icon>
+          <svg-icon
+            src="./assets/icons/heroicons/star.svg"
+            class="remove-icon"
+            [svgStyle]="{ 'width.px': 15 }"
+          ></svg-icon>
+          <svg-icon
+            src="./assets/icons/heroicons/star.svg"
+            class="remove-icon"
+            [svgStyle]="{ 'width.px': 15 }"
+          ></svg-icon>
+        </div> -->
 
-   <div class="showcase-badge angle">
-   New
-   </div>
+        <div class="price-box">
+          <p class="price">$48.00</p>
+          <del>$75.00</del>
+        </div>
+      </div>
+    </div>
+    <div class="w-auto bg-white rounded-lg overflow-hidden border showcase group">
+      <div class="relative w-full h-48">
+        <img
+          src="./assets/images/products/shirt-1.jpg"
+          alt="Product Image 1"
+          class="w-full h-full object-contain absolute top-0 left-0 product-image default"
+        />
+        <img
+          src="./assets/images/products/jacket-4.jpg"
+          alt="Product Image 2"
+          class="w-full h-full object-contain absolute top-0 left-0 opacity-0 product-image hover"
+        />
 
-   <div class="absolute top-2 right-2 opacity-0 icon-container">
-     <button class="btn-action block">          
-         <svg-icon
-   src="./assets/icons/heroicons/heart.svg"
+        <div class="absolute top-[8px] left-[-29px] rotate-[-45deg] uppercase text-[11px] px-[40px] py-[2px] bg-pink-400  text-white">New</div>
 
-   [svgStyle]="{ 'width.px': 15 }"
- ></svg-icon>
- </button>
+        <div class="absolute top-2 right-2 opacity-0 icon-container">
+          <button class="btn-action block">
+            <svg-icon
+              src="./assets/icons/heroicons/heart.svg"
+              [svgStyle]="{ 'width.px': 15 }"
+            ></svg-icon>
+          </button>
 
- <button class="btn-action block">
-   <svg-icon
-   src="./assets/icons/heroicons/eye.svg"
+          <button class="btn-action block">
+            <svg-icon
+              src="./assets/icons/heroicons/eye.svg"
+              [svgStyle]="{ 'width.px': 15 }"
+            ></svg-icon>
+          </button>
 
-   [svgStyle]="{ 'width.px': 15 }"
- ></svg-icon>
- </button>
+          <button class="btn-action block">
+            <svg-icon
+              src="./assets/icons/heroicons/shopping-cart.svg"
+              [svgStyle]="{ 'width.px': 15 }"
+            ></svg-icon>
+          </button>
+        </div>
+      </div>
 
-            <button class="btn-action block">
+      <!-- Description Section -->
+      <div class="p-4 showcase-content">
+        <h3 class="showcase-category">Product Title</h3>
+        <h3>
+          <a href="#" class="showcase-title">MEN Yarn Fleece Full-Zip Jacket</a>
+        </h3>
+        <!-- <div class="showcase-rating">
+          <svg-icon
+            src="./assets/icons/heroicons/star.svg"
+            class="remove-icon"
+            [svgStyle]="{ 'width.px': 15 }"
+          ></svg-icon>
+          <svg-icon
+            src="./assets/icons/heroicons/star.svg"
+            class="remove-icon"
+            [svgStyle]="{ 'width.px': 15 }"
+          ></svg-icon>
+          <svg-icon
+            src="./assets/icons/heroicons/star.svg"
+            class="remove-icon"
+            [svgStyle]="{ 'width.px': 15 }"
+          ></svg-icon>
+          <svg-icon
+            src="./assets/icons/heroicons/star.svg"
+            class="remove-icon"
+            [svgStyle]="{ 'width.px': 15 }"
+          ></svg-icon>
+          <svg-icon
+            src="./assets/icons/heroicons/star.svg"
+            class="remove-icon"
+            [svgStyle]="{ 'width.px': 15 }"
+          ></svg-icon>
+        </div> -->
 
+        <div class="price-box">
+          <p class="price">$48.00</p>
+          <del>$75.00</del>
+        </div>
+      </div>
+    </div>
+    <div class="w-auto bg-white rounded-lg overflow-hidden border showcase group">
+      <div class="relative w-full h-48">
+        <img
+          src="./assets/images/products/jacket-3.jpg"
+          alt="Product Image 1"
+          class="w-full h-full object-contain absolute top-0 left-0 product-image default"
+        />
+        <img
+          src="./assets/images/products/jacket-4.jpg"
+          alt="Product Image 2"
+          class="w-full h-full object-contain absolute top-0 left-0 opacity-0 product-image hover"
+        />
 
-   <svg-icon
-   src="./assets/icons/heroicons/shopping-cart.svg"
+        <div class="absolute top-[8px] left-[-29px] rotate-[-45deg] uppercase text-[11px] px-[40px] py-[2px] bg-black  text-white">Sale</div>
 
-   [svgStyle]="{ 'width.px': 15 }"
- ></svg-icon>
- </button>
-   </div>
- </div>
+        <div class="absolute top-2 right-2 opacity-0 icon-container">
+          <button class="btn-action block">
+            <svg-icon
+              src="./assets/icons/heroicons/heart.svg"
+              [svgStyle]="{ 'width.px': 15 }"
+            ></svg-icon>
+          </button>
+
+          <button class="btn-action block">
+            <svg-icon
+              src="./assets/icons/heroicons/eye.svg"
+              [svgStyle]="{ 'width.px': 15 }"
+            ></svg-icon>
+          </button>
+
+          <button class="btn-action block">
+            <svg-icon
+              src="./assets/icons/heroicons/shopping-cart.svg"
+              [svgStyle]="{ 'width.px': 15 }"
+            ></svg-icon>
+          </button>
+        </div>
+      </div>
+
+      <!-- Description Section -->
+      <div class="p-4 showcase-content">
+        <h3 class="showcase-category">Product Title</h3>
+        <h3>
+          <a href="#" class="showcase-title">MEN Yarn Fleece Full-Zip Jacket</a>
+        </h3>
+        <!-- <div class="showcase-rating">
+          <svg-icon
+            src="./assets/icons/heroicons/star.svg"
+            class="remove-icon"
+            [svgStyle]="{ 'width.px': 15 }"
+          ></svg-icon>
+          <svg-icon
+            src="./assets/icons/heroicons/star.svg"
+            class="remove-icon"
+            [svgStyle]="{ 'width.px': 15 }"
+          ></svg-icon>
+          <svg-icon
+            src="./assets/icons/heroicons/star.svg"
+            class="remove-icon"
+            [svgStyle]="{ 'width.px': 15 }"
+          ></svg-icon>
+          <svg-icon
+            src="./assets/icons/heroicons/star.svg"
+            class="remove-icon"
+            [svgStyle]="{ 'width.px': 15 }"
+          ></svg-icon>
+          <svg-icon
+            src="./assets/icons/heroicons/star.svg"
+            class="remove-icon"
+            [svgStyle]="{ 'width.px': 15 }"
+          ></svg-icon>
+        </div> -->
+
+        <div class="price-box">
+          <p class="price">$48.00</p>
+          <del>$75.00</del>
+        </div>
+
+      </div>
+    </div>
  
- <!-- Description Section -->
- <div class="p-4">
-   <h3 class="text-lg font-semibold">Product Title</h3>
-   <p class="text-gray-600 mt-2">This is a brief description of the product, highlighting its key features and benefits.</p>
-   <p class="text-gray-900 font-bold mt-4">$99.99</p>
- </div>
-</div>
-<div class=" w-auto bg-white  rounded-lg overflow-hidden showcase group">
-    <div class="relative w-full h-48">
-   <img src="./assets/images/products/jacket-3.jpg" alt="Product Image 1" class="w-full h-full object-contain absolute top-0 left-0 product-image default">
-   <img src="./assets/images/products/jacket-4.jpg" alt="Product Image 2" class="w-full h-full object-contain absolute top-0 left-0 opacity-0 product-image hover">
-
-   <div class="showcase-badge angle">
-   New
-   </div>
-
-   <div class="absolute top-2 right-2 opacity-0 icon-container">
-     <button class="btn-action block">          
-         <svg-icon
-   src="./assets/icons/heroicons/heart.svg"
-
-   [svgStyle]="{ 'width.px': 15 }"
- ></svg-icon>
- </button>
-
- <button class="btn-action block">
-   <svg-icon
-   src="./assets/icons/heroicons/eye.svg"
-
-   [svgStyle]="{ 'width.px': 15 }"
- ></svg-icon>
- </button>
-
-            <button class="btn-action block">
-
-
-   <svg-icon
-   src="./assets/icons/heroicons/shopping-cart.svg"
-
-   [svgStyle]="{ 'width.px': 15 }"
- ></svg-icon>
- </button>
-   </div>
- </div>
- 
- <!-- Description Section -->
- <div class="p-4">
-   <h3 class="text-lg font-semibold">Product Title</h3>
-   <p class="text-gray-600 mt-2">This is a brief description of the product, highlighting its key features and benefits.</p>
-   <p class="text-gray-900 font-bold mt-4">$99.99</p>
- </div>
-</div>
-<div class=" w-auto bg-white  rounded-lg overflow-hidden showcase group">
-    <div class="relative w-full h-48">
-   <img src="./assets/images/products/jacket-3.jpg" alt="Product Image 1" class="w-full h-full object-contain absolute top-0 left-0 product-image default">
-   <img src="./assets/images/products/jacket-4.jpg" alt="Product Image 2" class="w-full h-full object-contain absolute top-0 left-0 opacity-0 product-image hover">
-
-   <div class="showcase-badge angle">
-   New
-   </div>
-
-   <div class="absolute top-2 right-2 opacity-0 icon-container">
-     <button class="btn-action block">          
-         <svg-icon
-   src="./assets/icons/heroicons/heart.svg"
-
-   [svgStyle]="{ 'width.px': 15 }"
- ></svg-icon>
- </button>
-
- <button class="btn-action block">
-   <svg-icon
-   src="./assets/icons/heroicons/eye.svg"
-
-   [svgStyle]="{ 'width.px': 15 }"
- ></svg-icon>
- </button>
-
-            <button class="btn-action block">
-
-
-   <svg-icon
-   src="./assets/icons/heroicons/shopping-cart.svg"
-
-   [svgStyle]="{ 'width.px': 15 }"
- ></svg-icon>
- </button>
-   </div>
- </div>
- 
- <!-- Description Section -->
- <div class="p-4">
-   <h3 class="text-lg font-semibold">Product Title</h3>
-   <p class="text-gray-600 mt-2">This is a brief description of the product, highlighting its key features and benefits.</p>
-   <p class="text-gray-900 font-bold mt-4">$99.99</p>
- </div>
-</div>
-</div>
-  
-    
   </div>
-  
+</div>
+
+<!-- <div>
+  <h2>{{ objectData.title }}</h2>
+  <p><strong>Status:</strong> {{ objectData.status }}</p>
+  <p>{{ objectData.description }}</p>
+</div> -->

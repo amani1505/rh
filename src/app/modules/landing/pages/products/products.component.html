@@ -1,2 +1,12 @@
+<section class="container flex gap-5">
+  <div class="hidden p-5 border rounded-md w-1/4  lg:block">
+    <app-category (showSubCategory)="onShowSubCategory($event)"></app-category>
+  </div>
+  <div class="w-full">
+    <app-product-card [objectData]="myObject"></app-product-card>
+  </div>
 
-<app-product-card></app-product-card>
+</section>
+<div>
+  {{subCategory}}
+</div>

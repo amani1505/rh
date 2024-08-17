@@ -1,0 +1,65 @@
+<div class="text-base capitalize font-[500] mb-3">categories</div>
+<div>
+  <ul class="">
+    @for (category of categories; track $index) {
+      <li class="flex items-center my-2">
+        <button
+          class="flex items-center justify-between w-full"
+          (click)="toggleAccordion($index)"
+        >
+          <div class="flex items-center gap-x-2">
+            <img
+              [src]="category.image"
+              alt="clothes"
+              width="20"
+              height="20"
+              class="menu-title-img"
+            />
+            <p class="font-[500] text-[var(--sonic-silver)] capitalize">
+              {{ category.title }}
+            </p>
+          </div>
+          <div class="flex items-center">
+            @if (openIndex !== $index) {
+              <svg-icon
+                src="./assets/icons/heroicons/add-outline.svg"
+                class="add-icon"
+                [svgStyle]="{ 'width.px': 20 }"
+              ></svg-icon>
+            } @else {
+              <svg-icon
+                src="./assets/icons/heroicons/remove-outline.svg"
+                class="transition-all duration-300 ease-in-out overflow-hidden"
+                [svgStyle]="{ 'width.px': 15 }"
+              ></svg-icon>
+            }
+          </div>
+        </button>
+      </li>
+      @if (openIndex === $index) {
+        <div
+          class="overflow-hidden transition-[max-height] duration-500 ease-in-out border-t"
+          [ngStyle]="{ 'max-height': openIndex === $index ? '500px' : '0' }"
+        >
+          <div class="px-1 py-2 text-sm flex flex-col gap-y-2">
+            <div (click)="onShowSubCategory('sub category is clicked 1')">
+              my contents goes here
+            </div>
+            <div (click)="onShowSubCategory('sub category is clicked 2')">
+              my contents goes here
+            </div>
+            <div (click)="onShowSubCategory('sub category is clicked 3')">
+              my contents goes here
+            </div>
+            <div (click)="onShowSubCategory('sub category is clicked 4')">
+              my contents goes here
+            </div>
+            <div (click)="onShowSubCategory('sub category is clicked 5')">
+              my contents goes here
+            </div>
+          </div>
+        </div>
+      }
+    }
+  </ul>
+</div>

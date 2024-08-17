@@ -1,0 +1,21 @@
+
+.submenu-category-list {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+  
+  .submenu-category-list.open {
+    max-height: 500px; 
+  }
+  
+  .class {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: width 2s;
+  }
+  
+  .class:hover {
+    width: 300px;
+  }

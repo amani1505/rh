@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 
 @Component({
@@ -9,5 +9,6 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
   styleUrl: './product-card.component.scss'
 })
 export class ProductCardComponent {
+  @Input() objectData!: { status: string; title: string; description: string };
 
 }
