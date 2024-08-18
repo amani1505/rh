@@ -1,5 +1,5 @@
 <div
-  class=" px-0 border-b-[1px] border-[var(--cultured)] pb-[25px] md:pt-[25px]"
+  class="px-0 border-b-[1px] border-[var(--cultured)] pb-[25px] md:pt-[25px]"
 >
   <div
     class="container xs:flex xs:justify-between xs:items-center md:gap-[80px]"
@@ -45,7 +45,7 @@
         ></svg-icon>
 
         <span
-          class=" lg:absolute lg:-top-[2px] lg:-right-[3px] lg:bg-pink-500 lg:text-white lg:py-[2px] lg:px-[4px] rounded-full w-5 h-5 flex items-center justify-center text-sm"
+          class="lg:absolute lg:-top-[2px] lg:-right-[3px] lg:bg-pink-500 lg:text-white lg:py-[2px] lg:px-[4px] rounded-full w-5 h-5 flex items-center justify-center text-sm"
           >0</span
         >
       </button>
@@ -61,6 +61,43 @@
           >0</span
         >
       </button>
+
+      <button
+        class="lg:relative lg:text-[var(--onyx)] lg:p-[5px] text-gray-400 dark:text-yellow-400"
+        (click)="toggleTheme()"
+      >
+        <svg-icon
+          [src]="
+            themeService.isDark
+              ? './assets/icons/heroicons/sun-outline.svg'
+              : './assets/icons/heroicons/moon-outline.svg'
+          "
+      
+          [svgClass]="'h-5 w-5 '"
+        >
+        </svg-icon>
+      </button>
+      <!-- <div
+      (click)="toggleTheme()"
+      class="group flex h-9 cursor-pointer items-center justify-start rounded p-2 hover:bg-gray-100 dark:hover:bg-night-600">
+      <svg-icon
+        [src]="
+          themeService.isDark ? 'assets/icons/heroicons/outline/sun.svg' : 'assets/icons/heroicons/outline/moon.svg'
+        "
+        [svgClass]="'h-5 w-5 text-gray-400 dark:text-night-400'">
+      </svg-icon>
+
+      <a class="ml-3 truncate text-xs font-semibold tracking-wide text-gray-600 focus:outline-none dark:text-night-100">
+        {{ themeService.isDark ? 'Light Theme' : 'Dark Theme' }}
+      </a>
+
+      <div class="fixed w-full" *ngIf="!menuService.showSideBar">
+        <span
+          class="z-1 absolute left-12 -top-4 w-auto min-w-max origin-left scale-0 rounded-md bg-black p-2 text-xs font-bold text-white shadow-md transition-all duration-200 group-hover:scale-100 dark:bg-white dark:text-night-900">
+          Theme
+        </span>
+      </div>
+    </div> -->
     </div>
   </div>
 </div>
@@ -540,14 +577,17 @@
                                              MOBILe  NAVIGATON
 ======================================================================================================================-->
 @if (isOverlayActive) {
-  <div class="overlay" [class.active]="'modal-close-overlay'" (click)="toggleMobileMenu()"></div>
+  <div
+    class="overlay"
+    [class.active]="'modal-close-overlay'"
+    (click)="toggleMobileMenu()"
+  ></div>
 }
 
 <nav
   class="mobile-navigation-menu has-scrollbar"
   [class.active]="isMobileMenuActive"
 >
-
   <div
     class="menu-top pb-[15px] mb-[10px] flex justify-between items-center border-b-[2px] border-[var(--cultured)]"
   >
@@ -567,7 +607,7 @@
     </li>
 
     <li class="menu-category border-b-[1px] border-[var(--cultured)]">
-      <button class="accordion-menu"  [class.active]="menu" (click)="open()">
+      <button class="accordion-menu" [class.active]="menu" (click)="open()">
         <p class="menu-title">Men's</p>
 
         <div>
@@ -584,9 +624,9 @@
         </div>
       </button>
 
-      <ul class="submenu-category-list"  [class.active]="menu">
+      <ul class="submenu-category-list" [class.active]="menu">
         <li class="submenu-category">
-          <a href="#" class="submenu-title ">Shirt</a>
+          <a href="#" class="submenu-title">Shirt</a>
         </li>
 
         <li class="submenu-category">
@@ -845,12 +885,12 @@
       </li>
     </ul>
   </div>
-
 </nav>
 
-
-<div   class="mobile-navigation-menu has-scrollbar"
-[class.active]="isOverlayActive">
+<div
+  class="mobile-navigation-menu has-scrollbar"
+  [class.active]="isOverlayActive"
+>
   <div class="border rounded-md w-full p-5">
     <div class="sidebar-top">
       <h2 class="sidebar-title">Category</h2>
@@ -1354,30 +1394,30 @@
               <ion-icon name="star-half-outline"></ion-icon> -->
 
               <svg-icon
-              src="./assets/icons/heroicons/star.svg"
-              class="remove-icon"
-              [svgStyle]="{ 'width.px': 15 }"
-            ></svg-icon>
-            <svg-icon
-              src="./assets/icons/heroicons/star.svg"
-              class="remove-icon"
-              [svgStyle]="{ 'width.px': 15 }"
-            ></svg-icon>
-            <svg-icon
-              src="./assets/icons/heroicons/star.svg"
-              class="remove-icon"
-              [svgStyle]="{ 'width.px': 15 }"
-            ></svg-icon>
-            <svg-icon
-              src="./assets/icons/heroicons/star.svg"
-              class="remove-icon"
-              [svgStyle]="{ 'width.px': 15 }"
-            ></svg-icon>
-            <svg-icon
-              src="./assets/icons/heroicons/star.svg"
-              class="remove-icon"
-              [svgStyle]="{ 'width.px': 15 }"
-            ></svg-icon>
+                src="./assets/icons/heroicons/star.svg"
+                class="remove-icon"
+                [svgStyle]="{ 'width.px': 15 }"
+              ></svg-icon>
+              <svg-icon
+                src="./assets/icons/heroicons/star.svg"
+                class="remove-icon"
+                [svgStyle]="{ 'width.px': 15 }"
+              ></svg-icon>
+              <svg-icon
+                src="./assets/icons/heroicons/star.svg"
+                class="remove-icon"
+                [svgStyle]="{ 'width.px': 15 }"
+              ></svg-icon>
+              <svg-icon
+                src="./assets/icons/heroicons/star.svg"
+                class="remove-icon"
+                [svgStyle]="{ 'width.px': 15 }"
+              ></svg-icon>
+              <svg-icon
+                src="./assets/icons/heroicons/star.svg"
+                class="remove-icon"
+                [svgStyle]="{ 'width.px': 15 }"
+              ></svg-icon>
             </div>
 
             <div class="price-box">
@@ -1409,30 +1449,30 @@
               <ion-icon name="star"></ion-icon>
               <ion-icon name="star-half-outline"></ion-icon> -->
               <svg-icon
-              src="./assets/icons/heroicons/star.svg"
-              class="remove-icon"
-              [svgStyle]="{ 'width.px': 15 }"
-            ></svg-icon>
-            <svg-icon
-              src="./assets/icons/heroicons/star.svg"
-              class="remove-icon"
-              [svgStyle]="{ 'width.px': 15 }"
-            ></svg-icon>
-            <svg-icon
-              src="./assets/icons/heroicons/star.svg"
-              class="remove-icon"
-              [svgStyle]="{ 'width.px': 15 }"
-            ></svg-icon>
-            <svg-icon
-              src="./assets/icons/heroicons/star.svg"
-              class="remove-icon"
-              [svgStyle]="{ 'width.px': 15 }"
-            ></svg-icon>
-            <svg-icon
-              src="./assets/icons/heroicons/star.svg"
-              class="remove-icon"
-              [svgStyle]="{ 'width.px': 15 }"
-            ></svg-icon>
+                src="./assets/icons/heroicons/star.svg"
+                class="remove-icon"
+                [svgStyle]="{ 'width.px': 15 }"
+              ></svg-icon>
+              <svg-icon
+                src="./assets/icons/heroicons/star.svg"
+                class="remove-icon"
+                [svgStyle]="{ 'width.px': 15 }"
+              ></svg-icon>
+              <svg-icon
+                src="./assets/icons/heroicons/star.svg"
+                class="remove-icon"
+                [svgStyle]="{ 'width.px': 15 }"
+              ></svg-icon>
+              <svg-icon
+                src="./assets/icons/heroicons/star.svg"
+                class="remove-icon"
+                [svgStyle]="{ 'width.px': 15 }"
+              ></svg-icon>
+              <svg-icon
+                src="./assets/icons/heroicons/star.svg"
+                class="remove-icon"
+                [svgStyle]="{ 'width.px': 15 }"
+              ></svg-icon>
             </div>
 
             <div class="price-box">
@@ -1464,30 +1504,30 @@
               <ion-icon name="star"></ion-icon>
               <ion-icon name="star"></ion-icon> -->
               <svg-icon
-              src="./assets/icons/heroicons/star.svg"
-              class="remove-icon"
-              [svgStyle]="{ 'width.px': 15 }"
-            ></svg-icon>
-            <svg-icon
-              src="./assets/icons/heroicons/star.svg"
-              class="remove-icon"
-              [svgStyle]="{ 'width.px': 15 }"
-            ></svg-icon>
-            <svg-icon
-              src="./assets/icons/heroicons/star.svg"
-              class="remove-icon"
-              [svgStyle]="{ 'width.px': 15 }"
-            ></svg-icon>
-            <svg-icon
-              src="./assets/icons/heroicons/star.svg"
-              class="remove-icon"
-              [svgStyle]="{ 'width.px': 15 }"
-            ></svg-icon>
-            <svg-icon
-              src="./assets/icons/heroicons/star.svg"
-              class="remove-icon"
-              [svgStyle]="{ 'width.px': 15 }"
-            ></svg-icon>
+                src="./assets/icons/heroicons/star.svg"
+                class="remove-icon"
+                [svgStyle]="{ 'width.px': 15 }"
+              ></svg-icon>
+              <svg-icon
+                src="./assets/icons/heroicons/star.svg"
+                class="remove-icon"
+                [svgStyle]="{ 'width.px': 15 }"
+              ></svg-icon>
+              <svg-icon
+                src="./assets/icons/heroicons/star.svg"
+                class="remove-icon"
+                [svgStyle]="{ 'width.px': 15 }"
+              ></svg-icon>
+              <svg-icon
+                src="./assets/icons/heroicons/star.svg"
+                class="remove-icon"
+                [svgStyle]="{ 'width.px': 15 }"
+              ></svg-icon>
+              <svg-icon
+                src="./assets/icons/heroicons/star.svg"
+                class="remove-icon"
+                [svgStyle]="{ 'width.px': 15 }"
+              ></svg-icon>
             </div>
 
             <div class="price-box">
