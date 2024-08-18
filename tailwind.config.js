@@ -133,6 +133,8 @@ module.exports = {
     fontFamily: {
       poppins: ['Poppins', 'system-ui', 'sans-serif'],
       nunito: ['Nunito Sans', 'sans-serif'],
+      raleway: ["Raleway"],
+      varela: ["Varela Round", "sans-serif"],
     },
     container: {
       padding: {

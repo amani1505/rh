@@ -1,6 +1,6 @@
 <div class="mt-10 p-5">
   <div
-    class="container grid grid-cols-1 lg:grid-cols-2 rounded-xl drop-shadow bg-white"
+    class="container grid grid-cols-1 lg:grid-cols-2 rounded-xl drop-shadow bg-white "
   >
     <div class="flex flex-col sm:flex-row sm:col-span-1 p-4">
       <div class="flex overflow-x-auto sm:overflow-visible sm:flex-col lg:mr-4">
@@ -40,25 +40,118 @@
         <h2 class="text-xxl font-semibold mb-2 capitalize">
           {{ product.name }}
         </h2>
-        <p class="text-2xl font-bold text-secondary-600">
+        <p class="text-2xl font-bold text-secondary-600 font-raleway">
           {{ product.price | currency }}
         </p>
-        <div class="flex items-center gap-2">
-            <div class="font-semibold">Colors:</div>
-            <div class="flex items-center gap-1">
-               <div
+        <div class="flex items-center gap-8 mb-5 mt-3">
+          <div class="font-[500]">Colors:</div>
+          <div class="flex items-center gap-2">
+            <div
               *ngFor="let color of colors"
               [ngClass]="{
-                'ring-2 ring-primary-400': selectedColor === color
+                'opacity-30': selectedColor !== color,
+                'opacity-100': selectedColor === color,
               }"
               class="w-4 h-4 rounded-full cursor-pointer"
               [style.backgroundColor]="color"
               (click)="selectColor(color)"
             ></div>
-            </div>
+          </div>
         </div>
-        <p class="text-lg text-gray-700 mb-4">{{ product.description }}</p>
+        <div class="flex items-center gap-8 mt-3">
+          <div class="capitalize font-[500]">select size:</div>
+          <div class="w-16">
+            <select name="" id="">
+              <option value="">xl</option>
+              <option value="">sm</option>
+            </select>
+          </div>
+        </div>
+        <div
+          class="flex flex-col gap-2 md:flex-row md:items-center md:gap-8 mt-3"
+        >
+          <div class="flex items-center gap-8">
+            <div class="capitalize font-[500]">quantity:</div>
+            <div class="col-span-2">
+              <div
+                class="flex gap-2 border-2 border-slate-200 p-[2px] rounded-md items-center"
+              >
+                <button
+                  class="bg-primary-50 w-8 h-8 text-secondary-600 rounded font-semibold"
+                  (click)="add()"
+                >
+                  +
+                </button>
+                <p class="font-raleway">{{ quatity }}</p>
+                <button
+                  class="bg-primary-50 w-8 h-8 text-secondary-600 rounded font-semibold"
+                  (click)="decrease()"
+                >
+                  -
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="">
+            <p class="text-xm text-gray-500 font-raleway text-nowrap">
+              Available: {{ available }}
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-5 flex items-center gap-4">
+          <button
+            class="bg-primary-500 text-white py-1 px-2 rounded-md text-sm font-[500]"
+          >
+            Add to cart
+          </button>
+          <button
+            class="bg-secondary-500 text-white py-1 px-2 rounded-md text-sm font-[500] capitalize"
+          >
+            Buy now
+          </button>
+        </div>
+        <div class="mt-5">
+          <ul class="flex items-center gap-[5px]">
+            @for (item of icons; track $index) {
+              <li>
+                <a
+                  href="#"
+                  class="p-[5px] bg-[#f2f2f2] rounded-[var(--border-radius-sm)] flex text-[var(--sonic-silver)] transition-[ var(--transition-timing)] hover:bg-pink-500 hover:text-white"
+                >
+                  <svg-icon
+                    [src]="item"
+                    [svgStyle]="{ 'width.px': 20 }"
+                  ></svg-icon>
+                </a>
+              </li>
+            }
+          </ul>
+        </div>
       </div>
+    </div>
+  </div>
+
+  <div class="mt-5">
+    <div class="container rounded-xl drop-shadow bg-white ">
+ <div class="p-5">
+  <div class="py-1 border-b-2 border-primary-400">
+    <p class="font-poppins font-[500] text-lg">
+      Description
+    </p>
+  </div>
+  <div class="py-3">
+    <p class="font-varela">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi officia
+      architecto obcaecati ipsam ullam voluptas hic omnis, a sunt magnam,
+      quod molestiae repellendus, iusto consequatur autem. Minus mollitia
+      praesentium excepturi. Nesciunt officiis magni recusandae beatae ex
+      dolorum dignissimos, ad dolorem placeat iste! Ipsa iure alias sapiente
+      recusandae saepe libero quasi, error impedit consequuntur commodi
+      repellat perspiciatis nesciunt aliquid, rem adipisci?
+    </p>
+  </div>
+ </div>
     </div>
   </div>
 </div>
