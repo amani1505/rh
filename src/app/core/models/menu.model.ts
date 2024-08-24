@@ -1,5 +1,5 @@
 export interface MenuItem {
-  group: string;
+  group?: string;
   separator?: boolean;
   selected?: boolean;
   active?: boolean;
