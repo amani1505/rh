@@ -1,0 +1,56 @@
+<div
+  class="flex-col rounded-lg bg-white px-8 py-8 dark:bg-night-700 sm:flex-row w-full"
+>
+  <div class="mb-4 flex items-center justify-between">
+    <div class="flex-col items-center">
+      <h3 class="text-md font-bold text-gray-900 dark:text-night-50 capitalize">
+        category
+      </h3>
+      <!-- <span class="text-sm text-gray-400 dark:text-night-300"
+        >({{ 3 + " " }}item(s))</span
+      > -->
+    </div>
+    <button
+      class="flex-none rounded-md bg-gray-100 px-4 py-2.5 text-xs font-semibold text-gray-500 hover:bg-gray-200 dark:bg-night-600 dark:text-night-200 dark:hover:bg-night-500 capitalize"
+    >
+      new
+    </button>
+  </div>
+
+  <div class="relative overflow-x-auto">
+    <table class="w-full table-auto">
+      <!--Table head-->
+      <thead class="text-xs uppercase text-gray-400 dark:text-night-300">
+        <tr>
+          <th class="py-3 text-left">Product</th>
+          <th class="py-3 text-center">quantity</th>
+          <th class="py-3 text-right">Price $</th>
+          <th class="py-3 text-right">action</th>
+        </tr>
+      </thead>
+      <!--end Table head-->
+      <!--Table body-->
+      <tbody>
+        <!-- <tr
+          (toggleMenu)="onToggleSubcategory($event)"
+          [openedCategoryId]="openedCategoryId"
+          *ngFor="let category of category$ | async"
+          [category]="category"
+          cartegory-table-item
+          class="border-b border-dashed border-gray-200 hover:bg-gray-100 dark:border-night-500 dark:hover:bg-night-600 group relative text-gray-400 dark:text-night-400"
+        ></tr> -->
+        <ng-container *ngFor="let category of category$ | async">
+          <tr
+            cartegory-table-item
+            [openedCategoryId]="openedCategoryId"
+            [category]="category"
+            [openedCategoryId]="openedCategoryId"
+            (toggleMenu)="onToggleSubcategory($event)"
+            class="border-b border-dashed border-gray-200 hover:bg-gray-100 dark:border-night-500 dark:hover:bg-night-600 group relative text-gray-400 dark:text-night-400 cursor-pointer"
+          ></tr>
+        </ng-container>
+      </tbody>
+      <!--end::Table body-->
+    </table>
+  </div>
+</div>

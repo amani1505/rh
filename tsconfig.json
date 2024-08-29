@@ -20,7 +20,11 @@
     "paths": {
       "@constants/*": ["app/core/constants/*"],
       "@models/*": ["app/core/models/*"],
+      "@model/*": ["app/models/*"],
       "@service/*": ["app/core/services/*"],
+      "@dtos/*":["app/dtos/*"],
+      "@store/*": ["app/core/store/*"],
+      "@services/*": ["app/services/*"],
       "@directive/*": ["app/shared/directives/*"],
       "@auth/*": ["app/modules/auth/*"],
       "@dashboard/*": ["app/modules/dashboard/*"],
