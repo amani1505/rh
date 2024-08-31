@@ -1,71 +1,41 @@
-<tr (click)="onClick()">
-<td class="py-2 pr-2" >
-  <div class="flex items-center">
+<div class="flex gap-4 items-center mb-2">
+  <div class="w-14 h-14 rounded-md bg-gray-200 p-1">
     <img
       src="{{ api_url + category.image }}"
-      class="mr-4 h-10 w-10 flex-none rounded"
-      alt=""
+      alt="category"
+      width="100"
+      height="100"
+      class="rounded-md"
     />
-    <div class="flex flex-col justify-items-start">
-      <a
-        href="#"
-        class="mb-1 text-sm font-semibold text-gray-900 dark:text-night-100 hover:text-primary-500 transition duration-500 ease-in-out"
-        >{{ category.category_name }}</a
-      >
-      <span class="text-xs font-semibold text-gray-400 dark:text-night-300">{{
-        category.description
-      }}</span>
-    </div>
   </div>
-</td>
-<td
-  class="py-2 pl-2 text-center w-20 text-sm font-semibold text-gray-400 dark:text-night-200"
-  (click)="onClick()" class
->
-  <!-- <div
-      class="flex gap-2 border-2 border-slate-200 p-[2px] rounded-md items-center justify-center"
-    >
-      <button
-        class="bg-primary-50 w-8 h-8 text-secondary-600 rounded font-semibold"
-        (click)="add()"
-      >
-        +
-      </button>
-      <p class="font-raleway">{{ quatity }}</p>
-      <button
-        class="bg-primary-50 w-8 h-8 text-secondary-600 rounded font-semibold"
-        (click)="decrease()"
-      >
-        -
-      </button>
-    </div> -->
-</td>
-
-<td class="py-2 pl-2 text-right" (click)="onClick()" class>
-    <!-- <span class="text-sm font-semibold text-gray-400 dark:text-night-200">{{
-      product.price | currency
-    }}</span> -->
-  </td>
-
-<td class="py-2 pl-2 flex justify-end" (click)="onClick()" class>
-  <div
-    class="text-sm font-bold text-white dark:text-night-200 cursor-pointer bg-rose-400 hover:bg-rose-500 text-center rounded-full p-[2px] w-6 h-6 flex items-center justify-center transition duration-500 ease-in-out"
-  >
-    <svg-icon
-      src="assets/icons/heroicons/x-mark.svg"
-      [svgStyle]="{ 'width.px': 20 }"
-    ></svg-icon>
+  <div>
+    <h3 class="text-md font-[500] text-gray-700 dark:text-night-50 capitalize">
+      {{ category.category_name }}
+    </h3>
+    <span class="text-sm text-gray-400 dark:text-night-300">{{
+      category.description
+    }}</span>
   </div>
-</td>
-</tr>
-
+</div>
 <div>
-  <tr *ngIf="openedCategoryId === category.id">
-    <td colspan="4" class="overflow-hidden pt-1 pl-4 transition-all duration-500">
-      <div>
-        <!-- Subcategory content goes here -->
-        Opened Subcategory for {{ category.category_name}}
-      </div>
-    </td>
-  </tr>
+  <h3 class="text-md font-[500] text-gray-700 dark:text-night-50 capitalize">
+    sub categories
+  </h3>
+  <div class="grid grid-cols-3 gap-3 mt-2">
+    <button
+      class="flex-none rounded-full bg-gray-200 px-4 text-xs font-[400] text-gray-500 hover:bg-gray-300 dark:bg-night-600 dark:text-night-200 dark:hover:bg-night-500 capitalize"
+    >
+      new
+    </button>
+    <button
+      class="flex-none rounded-full bg-gray-200 px-4 text-xs font-[400] text-gray-500 hover:bg-gray-300 dark:bg-night-600 dark:text-night-200 dark:hover:bg-night-500 capitalize"
+    >
+      new
+    </button>
+    <button
+      class="flex-none rounded-full bg-gray-200 px-4 text-xs font-[400] text-gray-500 hover:bg-gray-300 dark:bg-night-600 dark:text-night-200 dark:hover:bg-night-500 capitalize"
+    >
+      new
+    </button>
+  </div>
 </div>

@@ -4,7 +4,6 @@ import { ToastModule } from 'primeng/toast';
 import { TableModule } from 'primeng/table';
 import { HttpClientModule } from '@angular/common/http';
 import { TagModule } from 'primeng/tag';
-import { CustomerService } from './services/customer.servive';
 import { Customer } from './domain/customer';
 import { select, Store, StoreModule } from '@ngrx/store';
 import { category_reducer } from 'app/store/category/category.reducer';
@@ -29,7 +28,6 @@ export class ProductCategoryComponent implements OnInit {
 
   ngOnInit() {
     this._store.dispatch(invoke_category_api());
-
     this.category$ = this._store.pipe(select(select_categories));
   }
 }

@@ -8,11 +8,22 @@ import { select_categories } from 'app/store/category/category.selector';
 import { NgFor, NgIf, CommonModule } from '@angular/common';
 import { TableModule } from 'primeng/table';
 import { TagModule } from 'primeng/tag';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-category',
   standalone: true,
-  imports: [CommonModule, ItemComponent, TableModule, TagModule],
+  imports: [
+    CommonModule,
+    ItemComponent,
+    TableModule,
+    TagModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatIconModule,
+  ],
   templateUrl: './category.component.html',
   styleUrl: './category.component.scss',
 })
