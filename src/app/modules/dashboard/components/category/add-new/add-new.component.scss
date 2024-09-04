@@ -1,0 +1,39 @@
+.image-uploader {
+    position: relative;
+    border: 2px dashed #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+  }
+  
+  .image-uploader.drag-over {
+    border-color: #66afe9;
+    background-color: #f0f8ff;
+  }
+  
+  .image-uploader img {
+    object-fit: cover;
+  }
+  
+  .image-uploader button {
+    position: absolute;
+    bottom: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .image-uploader button:hover {
+    background-color: #0056b3;
+  }
+  
+  .image-uploader input[type="file"] {
+    display: none;
+  }
+  

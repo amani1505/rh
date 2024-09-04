@@ -20,7 +20,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     importProvidersFrom(
       AngularSvgIconModule.forRoot(),
-      StoreModule.forRoot(app_reducer),
+      StoreModule.forRoot( app_reducer, ),
 
       EffectsModule.forRoot([]),
     ),
@@ -28,6 +28,7 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(),
     provideEffects(),
     provideStore(),
-    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }), provideAnimationsAsync(),
+    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
+    provideAnimationsAsync(),
   ],
 };

@@ -1,4 +1,4 @@
-<div class="flex-col rounded-lg px-8 sm:flex-row w-full">
+<div class="flex-col rounded-lg sm:flex-row w-full">
   <div class="mb-4 flex items-center justify-between">
     <div class="flex-col items-center">
       <h3 class="text-md font-bold text-gray-900 dark:text-night-50 capitalize">
@@ -10,13 +10,14 @@
     </div>
     <button
       class="flex-none rounded-md bg-gray-200 px-4 py-2.5 text-xs font-semibold text-gray-500 hover:bg-gray-300 dark:bg-night-600 dark:text-night-200 dark:hover:bg-night-500 capitalize"
+      (click)="openDialog()"
     >
       new
     </button>
   </div>
 
   <div class="relative overflow-x-auto">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
       <div
         class="bg-white rounded-lg p-2 dark:bg-night-700"
         *ngFor="let category of category$ | async"
@@ -25,4 +26,13 @@
       ></div>
     </div>
   </div>
+</div>
+
+<div class="flex justify-center">
+  <app-image-uploader
+    [width]="'200px'"
+    [height]="'200px'"
+    (imageSelected)="onImageSelected($event)"
+  >
+  </app-image-uploader>
 </div>

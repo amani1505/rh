@@ -30,6 +30,7 @@
     "angular-svg-icon": "^17.0.0",
     "apexcharts": "^3.50.0",
     "cz-conventional-changelog": "^3.3.0",
+    "ng-angular-popup": "^0.6.2",
     "ng-apexcharts": "^1.8.0",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.5",
