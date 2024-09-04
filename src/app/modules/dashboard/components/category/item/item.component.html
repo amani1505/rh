@@ -1,5 +1,4 @@
 <div class="flex justify-between">
-
   <div class="flex gap-4 items-center mb-2">
     <div class="w-14 h-14 rounded-md bg-gray-200 p-1">
       <img
@@ -11,7 +10,9 @@
       />
     </div>
     <div>
-      <h3 class="text-md font-[500] text-gray-700 dark:text-night-50 capitalize">
+      <h3
+        class="text-md font-[500] text-gray-700 dark:text-night-50 capitalize"
+      >
         {{ category.category_name }}
       </h3>
       <span class="text-sm text-gray-400 dark:text-night-300">{{
@@ -19,7 +20,7 @@
       }}</span>
     </div>
   </div>
-  
+
   <div class="">
     <button
       mat-icon-button
@@ -30,7 +31,7 @@
       <mat-icon>more_vert</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item >
+      <button mat-menu-item>
         <mat-icon>dialpad</mat-icon>
         <span>Redial</span>
       </button>
@@ -44,29 +45,25 @@
       </button>
     </mat-menu>
   </div>
-
 </div>
-
 
 <div>
   <h3 class="text-md font-[500] text-gray-700 dark:text-night-50 capitalize">
     sub categories
   </h3>
-  <div class="grid grid-cols-3 gap-3 mt-2">
-    <button
-      class="flex-none rounded-full bg-gray-200 px-4 text-xs font-[400] text-gray-500 hover:bg-gray-300 dark:bg-night-600 dark:text-night-200 dark:hover:bg-night-500 capitalize"
-    >
-      new
-    </button>
-    <button
-      class="flex-none rounded-full bg-gray-200 px-4 text-xs font-[400] text-gray-500 hover:bg-gray-300 dark:bg-night-600 dark:text-night-200 dark:hover:bg-night-500 capitalize"
-    >
-      new
-    </button>
-    <button
-      class="flex-none rounded-full bg-gray-200 px-4 text-xs font-[400] text-gray-500 hover:bg-gray-300 dark:bg-night-600 dark:text-night-200 dark:hover:bg-night-500 capitalize"
-    >
-      new
-    </button>
+  @if (category.sub_categories.length > 0) {
+    <div class="grid grid-cols-3 gap-3 mt-2">
+      @for (subCategory of category.sub_categories; track $index) {
+        <button
+          class="flex-none rounded-full bg-gray-200 px-4 text-xs font-[400] text-gray-500 hover:bg-gray-300 dark:bg-night-600 dark:text-night-200 dark:hover:bg-night-500 capitalize"
+        >
+          {{ subCategory.sub_category_name }}
+        </button>
+      }
+    </div>
+  }
+
+  <div class="font-raleway">
+No sub categories
   </div>
 </div>

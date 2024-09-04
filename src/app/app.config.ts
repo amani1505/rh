@@ -20,7 +20,8 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     importProvidersFrom(
       AngularSvgIconModule.forRoot(),
-      StoreModule.forRoot( app_reducer, ),
+
+      StoreModule.forRoot(app_reducer),
 
       EffectsModule.forRoot([]),
     ),

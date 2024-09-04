@@ -5,7 +5,6 @@
   <form action="" [formGroup]="categoryForm">
     <div class="flex justify-center">
       <app-image-uploader
-       
         [width]="'200px'"
         [height]="'200px'"
         (imageSelected)="onImageSelected($event)"
@@ -35,7 +34,7 @@
   <button mat-button color="accent" (click)="save()">
     <svg
       *ngIf="loading"
-      class="-ml-1 mr-3 h-5 w-5 animate-spin text-white text-center"
+      class="-ml-1 mr-3 h-5 w-5 animate-spin text-primary-500 text-center"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
@@ -57,4 +56,4 @@
     <span *ngIf="!loading"> save</span>
   </button>
 </mat-dialog-actions>
-<ng-toast [width]="300" [position]="ToasterPosition.TOP_RIGHT" />
+<!-- <ng-toast [width]="300" [position]="ToasterPosition.TOP_RIGHT" /> -->

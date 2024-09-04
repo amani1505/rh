@@ -19,6 +19,7 @@ import {
   NgToastService,
   ToasterPosition,
 } from 'ng-angular-popup';
+import { HotToastService } from '@ngneat/hot-toast';
 
 @Component({
   selector: 'app-add-new',
@@ -47,6 +48,7 @@ export class AddNewComponent {
     private _store: Store,
     private _appStore: Store<AppStateInterface>,
     private _toast: NgToastService,
+    private toast: HotToastService,
   ) {}
 
   categoryForm = this._formBuilder.group({
@@ -59,10 +61,15 @@ export class AddNewComponent {
 
   save() {
     if (this.categoryForm.invalid || !this.image) {
-      this._toast.warning(
-        'Please fill out the form and upload an image',
-        'Warning',
-      );
+      // this._toast.warning(
+      //   'Please fill out the form and upload an image',
+      //   'Warning',
+      // );
+
+      this.toast.error('Please fill out the form and upload an image', {
+        position: 'top-right',
+      });
+
       return;
     }
     this.loading = true;
@@ -92,11 +99,13 @@ export class AddNewComponent {
           }),
         );
         this.loading = false;
-        this._toast.success('Data saved Successfull', 'DONE',5000);
-      
+
+        this.toast.success('successfull saved!!', {
+          position: 'top-right',
+        });
+        this.closeDialog();
       }
     });
-    this.closeDialog();
   }
   closeDialog() {
     this._dialogRef.close();
