@@ -1,6 +1,4 @@
-import { CreateCategoryDto } from '@dtos/category/create-category.dto';
-import { UpdateCategoryDto } from '@dtos/category/update-category.dto';
-import { CategoryInterface } from '@model/category.interface';
+import { CategoryItemInterface } from '@model/category.interface';
 import { createAction, props } from '@ngrx/store';
 
 //  CREATE
@@ -17,11 +15,17 @@ export const save_category_api_success = createAction(
 //  READ
 export const invoke_category_api = createAction(
   '[Category API] Invoke Fetch Category API',
+  props<{ page: number; limit?: number; search?: string; sortOrder?: string; relations?: string[] }>()
 );
 
 export const category_fetch_api_success = createAction(
   '[Category API] Fetch Category API Success',
-  props<{ all_categories: CategoryInterface[] }>(),
+  props<{
+    all_categories: CategoryItemInterface[];
+    current_page: number;
+    total_pages: number;
+    total_items: number;
+  }>(),
 );
 
 // UPDATE

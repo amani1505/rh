@@ -55,15 +55,28 @@ export class CategoryEffect {
     this._actions$.pipe(
       ofType(invoke_category_api),
       withLatestFrom(this._store.pipe(select(select_categories))),
-      mergeMap(([, category_fron_store]) => {
-        if (category_fron_store.length > 0) {
+      mergeMap(([action, category_from_store]) => {
+        if (category_from_store.data.length > 0) {
           return EMPTY;
         }
-        return this._categoryService.getAll().pipe(
-          map((data) => {
-            return category_fetch_api_success({ all_categories: data });
-          }),
-        );
+        return this._categoryService
+          .getAll({
+            page: action.page,
+            limit: action.limit || 5,
+            search: '',
+            sortOrder: action.sortOrder || 'ASC',
+            relations: ['sub_categories'],
+          })
+          .pipe(
+            map((response) => {
+              return category_fetch_api_success({
+                all_categories: response.data,
+                current_page: response.current_page,
+                total_pages: response.total_pages,
+                total_items: response.total_items,
+              });
+            }),
+          );
       }),
     ),
   );

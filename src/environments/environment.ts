@@ -4,8 +4,10 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://romaymah-api.onrender.com/api/',
-  staicUrl: 'https://romaymah-api.onrender.com/',
+  // apiUrl: 'https://romaymah-api.onrender.com/api/',
+  // staicUrl: 'https://romaymah-api.onrender.com/',
+  apiUrl: 'http://localhost:3000/api/',
+  staicUrl: 'http://localhost:3000/',
 };
 
 /*

@@ -32,16 +32,16 @@
     </button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item>
-        <mat-icon>dialpad</mat-icon>
-        <span>Redial</span>
-      </button>
-      <button mat-menu-item disabled>
-        <mat-icon>voicemail</mat-icon>
-        <span>Check voice mail</span>
+        <mat-icon>notifications_off</mat-icon>
+        <span>Update</span>
       </button>
       <button mat-menu-item>
-        <mat-icon>notifications_off</mat-icon>
-        <span>Disable alerts</span>
+        <mat-icon>dialpad</mat-icon>
+        <span>Delete</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>voicemail</mat-icon>
+        <span>Add sub categories</span>
       </button>
     </mat-menu>
   </div>
@@ -63,7 +63,7 @@
     </div>
   }
 
-  <div class="font-raleway">
-No sub categories
+  <div class="font-raleway text-sm text-red-400 dark:text-red-500">
+    No sub categories
   </div>
 </div>
