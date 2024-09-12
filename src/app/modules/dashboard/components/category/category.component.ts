@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { AddNewComponent } from './add-new/add-new.component';
 import { ImageUploaderComponent } from '../shared/image-uploader/image-uploader.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { map } from 'rxjs/operators';
 
 @Component({
@@ -22,13 +23,16 @@ import { map } from 'rxjs/operators';
     ItemComponent,
     MatDialogModule,
     ImageUploaderComponent,
+    NgxPaginationModule,
   ],
   templateUrl: './category.component.html',
   styleUrl: './category.component.scss',
 })
 export class CategoryComponent {
-  categories$: Observable<CategoryItemInterface[]> | null = null;
+  categories$: Observable<CategoryItemInterface[]> =new Observable();
   page: number = 1;
+  total: number = 10;
+  loading: boolean=true;
 
   constructor(
     private _store: Store,
@@ -39,14 +43,24 @@ export class CategoryComponent {
     this._store.dispatch(invoke_category_api({ page: this.page }));
     this.categories$ = this._store.pipe(
       select(select_categories),
-      map((category: CategoryInterface) => category?.data || []),
+      map((category: CategoryInterface) => category?.data ?? [])
     );
+  
+    this._store.pipe(select(select_categories)).subscribe((response) => {
+      this.total = response.total_items;
+      this.page = response.current_page;
+    });
   }
   openDialog() {
     this._dialog.open(AddNewComponent, {
       width: '90%',
       disableClose: false,
     });
+  }
+
+  getPage(page: number) {
+    console.log("Page",page)
+    this._store.dispatch(invoke_category_api({ page: page }));
   }
   onImageSelected(file: File) {
     console.log('Selected file:', file);

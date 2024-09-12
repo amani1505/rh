@@ -20,12 +20,25 @@
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
       <div
         class="bg-white rounded-lg p-2 dark:bg-night-700"
-        *ngFor="let category of categories$ | async"
+        *ngFor="
+          let category of (categories$ | async) ?? []
+            | paginate
+              : { itemsPerPage: 10, currentPage: page, totalItems: total }
+        "
         [category]="category"
         cartegory-table-item
       ></div>
     </div>
   </div>
+</div>
+
+<div class="has-text-centered">
+  <div class="spinner" [ngClass]="{ hidden: !loading }"></div>
+  <pagination-controls
+    id="server"
+    [responsive]="true"
+    (pageChange)="getPage($event)"
+  ></pagination-controls>
 </div>
 
 <!-- <div class="flex justify-center">

@@ -56,13 +56,13 @@ export class CategoryEffect {
       ofType(invoke_category_api),
       withLatestFrom(this._store.pipe(select(select_categories))),
       mergeMap(([action, category_from_store]) => {
-        if (category_from_store.data.length > 0) {
-          return EMPTY;
-        }
+        // if (category_from_store.data.length > 0) {
+        //   return EMPTY;
+        // }
         return this._categoryService
           .getAll({
             page: action.page,
-            limit: action.limit || 5,
+            limit: action.limit || 1,
             search: '',
             sortOrder: action.sortOrder || 'ASC',
             relations: ['sub_categories'],

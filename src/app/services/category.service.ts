@@ -21,7 +21,7 @@ export class CategoryService {
     page = 1,
     limit = 10,
     search = '',
-    sortOrder = 'ASc',
+    sortOrder = 'ASC',
     relations = ['sub_categories'],
   }: {
     page?: number;

@@ -22,7 +22,7 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class ItemComponent {
   api_url = environment.staicUrl;
-  @Input() category = <CategoryItemInterface>{};
+  @Input() category: CategoryItemInterface = {} as CategoryItemInterface;
   @Input() openedCategoryId: string | null = null;
   @Output() toggleMenu = new EventEmitter<string>();
   constructor() {}
