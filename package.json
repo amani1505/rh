@@ -35,6 +35,8 @@
     "cz-conventional-changelog": "^3.3.0",
     "ng-angular-popup": "^0.6.2",
     "ng-apexcharts": "^1.8.0",
+    "ngrx-store-localstorage": "^17.0.0",
+    "ngrx-store-persist": "^1.0.24",
     "ngx-pagination": "^6.0.3",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.5",

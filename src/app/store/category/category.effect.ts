@@ -56,9 +56,9 @@ export class CategoryEffect {
       ofType(invoke_category_api),
       withLatestFrom(this._store.pipe(select(select_categories))),
       mergeMap(([action, category_from_store]) => {
-        // if (category_from_store.data.length > 0) {
-        //   return EMPTY;
-        // }
+        if (category_from_store.data.length < 0) {
+          return EMPTY;
+        }
         return this._categoryService
           .getAll({
             page: action.page,

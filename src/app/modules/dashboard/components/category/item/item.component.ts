@@ -1,4 +1,10 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { CategoryItemInterface } from '@model/category.interface';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { environment } from 'environments/environment';
@@ -19,6 +25,7 @@ import { MatButtonModule } from '@angular/material/button';
   ],
   templateUrl: './item.component.html',
   styleUrl: './item.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ItemComponent {
   api_url = environment.staicUrl;

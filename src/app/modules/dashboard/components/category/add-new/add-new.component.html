@@ -1,7 +1,8 @@
-<h1 mat-dialog-title class="text-center text-2xl font-bold tracking-wider">
-  Add Category
-</h1>
-<mat-dialog-content class="mat-typography w-full">
+<app-sidebar
+  [isOpened]="isOpened"
+  (closeSidebar)="toggleDrawer()"
+  [title]="'create Product category'"
+ >
   <form action="" [formGroup]="categoryForm">
     <div class="flex justify-center">
       <app-image-uploader
@@ -11,7 +12,7 @@
       >
       </app-image-uploader>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 my-4">
+    <div class="grid grid-cols-1 gap-3 my-4">
       <p>
         <input
           type="text"
@@ -28,8 +29,7 @@
       </p>
     </div>
   </form>
-</mat-dialog-content>
-<mat-dialog-actions align="end">
+
   <button mat-button mat-dialog-close color="warn">Cancel</button>
   <button mat-button color="accent" (click)="save()">
     <svg
@@ -55,5 +55,4 @@
     </svg>
     <span *ngIf="!loading"> save</span>
   </button>
-</mat-dialog-actions>
-<!-- <ng-toast [width]="300" [position]="ToasterPosition.TOP_RIGHT" /> -->
+</app-sidebar>

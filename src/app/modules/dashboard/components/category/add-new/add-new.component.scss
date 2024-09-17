@@ -37,3 +37,44 @@
     display: none;
   }
   
+
+  .example-container {
+    width: 500px;
+    height: 300px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+  
+  .example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .example-sidenav {
+    padding: 20px;
+  }
+
+
+  .full-height-drawer-container {
+    height: 100vh; // Full height of the viewport
+    position: fixed; // Fix to the viewport
+    top: 0;
+    right: 0;
+    width: 20%; // Full width to allow drawer to cover the content when opened
+     // High z-index to ensure it appears on top
+  }
+  
+  .full-height-drawer {
+    width: 400px; // Adjust width as needed
+    max-width: 80vw; // Optional: Restrict the max width relative to the viewport
+    height: 100vh; // Full height of the viewport
+    overflow-y: auto; // Enable scrolling if content overflows
+  }
+  
+  .drawer-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  

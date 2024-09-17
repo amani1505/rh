@@ -22,14 +22,15 @@
       "@models/*": ["app/core/models/*"],
       "@model/*": ["app/models/*"],
       "@service/*": ["app/core/services/*"],
-      "@dtos/*":["app/dtos/*"],
+      "@dtos/*": ["app/dtos/*"],
       "@store/*": ["app/core/store/*"],
       "@services/*": ["app/services/*"],
       "@directive/*": ["app/shared/directives/*"],
       "@auth/*": ["app/modules/auth/*"],
       "@dashboard/*": ["app/modules/dashboard/*"],
       "@landing/*": ["app/modules/landing/*"],
-      "@layout/*": ["app/modules/layout/*"]
+      "@layout/*": ["app/modules/layout/*"],
+      "@components/*": ["app/components/*"]
     },
     "module": "ES2022",
     "useDefineForClassFields": false,

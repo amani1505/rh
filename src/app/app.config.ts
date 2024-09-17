@@ -5,15 +5,21 @@ import {
 } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { provideAnimations } from '@angular/platform-browser/animations';
-
 import { routes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
 import { AngularSvgIconModule } from 'angular-svg-icon';
-import { EffectsModule, provideEffects } from '@ngrx/effects';
-import { provideStore, StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import {
+  provideStore,
+  StoreModule,
+} from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { app_reducer } from './shared/store/app.reducer';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { metaReducers } from './shared/store/localStoragePersistance';
+
+
+
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -21,13 +27,12 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom(
       AngularSvgIconModule.forRoot(),
 
-      StoreModule.forRoot(app_reducer),
+      StoreModule.forRoot(app_reducer, { metaReducers }),
 
-      EffectsModule.forRoot([]),
+      EffectsModule.forRoot(),
     ),
     provideAnimations(),
     provideHttpClient(),
-    provideEffects(),
     provideStore(),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
     provideAnimationsAsync(),

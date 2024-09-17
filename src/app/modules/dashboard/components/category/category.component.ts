@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { ItemComponent } from './item/item.component';
 import {
   CategoryInterface,
@@ -24,15 +24,22 @@ import { map } from 'rxjs/operators';
     MatDialogModule,
     ImageUploaderComponent,
     NgxPaginationModule,
-  ],
+    AddNewComponent
+],
   templateUrl: './category.component.html',
   styleUrl: './category.component.scss',
 })
 export class CategoryComponent {
-  categories$: Observable<CategoryItemInterface[]> =new Observable();
+  @Output() createProduct:boolean = false;
+  categories$: Observable<CategoryItemInterface[]> = new Observable();
+  responsive: boolean = true;
+  autoHide: boolean = true;
+  loading: boolean = true;
+  nextLabel: string = '';
+  previousLabel: string = '';
+  maxSize: number = 7;
   page: number = 1;
   total: number = 10;
-  loading: boolean=true;
 
   constructor(
     private _store: Store,
@@ -43,23 +50,30 @@ export class CategoryComponent {
     this._store.dispatch(invoke_category_api({ page: this.page }));
     this.categories$ = this._store.pipe(
       select(select_categories),
-      map((category: CategoryInterface) => category?.data ?? [])
+      map((category: CategoryInterface) => category?.data ?? []),
     );
-  
+
     this._store.pipe(select(select_categories)).subscribe((response) => {
       this.total = response.total_items;
+      console.log('Current State', response);
       this.page = response.current_page;
     });
   }
-  openDialog() {
-    this._dialog.open(AddNewComponent, {
-      width: '90%',
-      disableClose: false,
-    });
+  openDialog(opened:boolean) {
+
+    console.log("::Opened 2",opened)
+    this.createProduct = opened;
+    // this._dialog.open(AddNewComponent, {
+    //   width: '90%',
+    //   disableClose: false,
+    // });
   }
 
+  handleSidebarClose() {
+    this.createProduct = false; // Handle sidebar close event
+  }
   getPage(page: number) {
-    console.log("Page",page)
+    console.log('Page', page);
     this._store.dispatch(invoke_category_api({ page: page }));
   }
   onImageSelected(file: File) {

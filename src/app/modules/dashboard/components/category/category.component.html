@@ -10,7 +10,7 @@
     </div>
     <button
       class="flex-none rounded-md bg-gray-200 px-4 py-2.5 text-xs font-semibold text-gray-500 hover:bg-gray-300 dark:bg-night-600 dark:text-night-200 dark:hover:bg-night-500 capitalize"
-      (click)="openDialog()"
+      (click)="openDialog(true)"
     >
       new
     </button>
@@ -23,7 +23,12 @@
         *ngFor="
           let category of (categories$ | async) ?? []
             | paginate
-              : { itemsPerPage: 10, currentPage: page, totalItems: total }
+              : {
+                  id: 'server',
+                  itemsPerPage: 1,
+                  currentPage: page,
+                  totalItems: total,
+                }
         "
         [category]="category"
         cartegory-table-item
@@ -36,11 +41,16 @@
   <div class="spinner" [ngClass]="{ hidden: !loading }"></div>
   <pagination-controls
     id="server"
-    [responsive]="true"
+    [responsive]="responsive"
+    [maxSize]="maxSize"
+    [previousLabel]="previousLabel"
+    [nextLabel]="nextLabel"
     (pageChange)="getPage($event)"
   ></pagination-controls>
 </div>
 
+<app-add-new [isOpened]="createProduct"
+(closeSidebar)="handleSidebarClose()"></app-add-new>
 <!-- <div class="flex justify-center">
   <app-image-uploader
     [width]="'200px'"

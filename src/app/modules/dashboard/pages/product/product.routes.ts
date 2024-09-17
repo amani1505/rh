@@ -4,6 +4,7 @@ import { provideState } from '@ngrx/store';
 import { CategoryEffect } from 'app/store/category/category.effect';
 import { category_reducer } from 'app/store/category/category.reducer';
 
+
 export default [
   {
     path: '',
@@ -16,6 +17,7 @@ export default [
     providers: [
       provideEffects(CategoryEffect),
       provideState({ name: 'categories', reducer: category_reducer }),
+      
     ],
   },
 ] as Routes;

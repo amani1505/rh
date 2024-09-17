@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { ImageUploaderComponent } from '@dashboard/components/shared/image-uploader/image-uploader.component';
@@ -20,6 +20,8 @@ import {
   ToasterPosition,
 } from 'ng-angular-popup';
 import { HotToastService } from '@ngneat/hot-toast';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { SidebarComponent } from '@components/sidebar/sidebar.component';
 
 @Component({
   selector: 'app-add-new',
@@ -32,6 +34,9 @@ import { HotToastService } from '@ngneat/hot-toast';
     ReactiveFormsModule,
     FormsModule,
     NgToastModule,
+    MatSidenavModule,
+    MatButtonModule,
+    SidebarComponent,
   ],
   providers: [NgToastService],
   templateUrl: './add-new.component.html',
@@ -41,15 +46,18 @@ export class AddNewComponent {
   image!: File;
   ToasterPosition = ToasterPosition;
   loading: boolean = false;
+  @Input() isOpened: boolean = false;
+  @Output() closeSidebar = new EventEmitter<void>();
 
   constructor(
     private _formBuilder: FormBuilder,
-    private _dialogRef: MatDialogRef<AddNewComponent>,
     private _store: Store,
     private _appStore: Store<AppStateInterface>,
     private _toast: NgToastService,
     private toast: HotToastService,
-  ) {}
+  ) {
+    console.log(this.isOpened, '::Opened');
+  }
 
   categoryForm = this._formBuilder.group({
     category_name: ['', Validators.required],
@@ -61,11 +69,6 @@ export class AddNewComponent {
 
   save() {
     if (this.categoryForm.invalid || !this.image) {
-      // this._toast.warning(
-      //   'Please fill out the form and upload an image',
-      //   'Warning',
-      // );
-
       this.toast.error('Please fill out the form and upload an image', {
         position: 'top-right',
       });
@@ -103,11 +106,17 @@ export class AddNewComponent {
         this.toast.success('successfull saved!!', {
           position: 'top-right',
         });
-        this.closeDialog();
       }
     });
   }
-  closeDialog() {
-    this._dialogRef.close();
+  // closeDialog() {
+  //   this._dialogRef.close();
+  // }
+
+  toggleDrawer() {
+    this.isOpened = !this.isOpened;
+    if (!this.isOpened) {
+      this.closeSidebar.emit(); // Emit event to parent component when closed
+    }
   }
 }
