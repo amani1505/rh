@@ -12,6 +12,7 @@ export interface CategoryItemInterface {
 
 export interface CategoryInterface {
   data: Array<CategoryItemInterface>;
+  limit: number;
   current_page: number;
   total_pages: number;
   total_items: number;

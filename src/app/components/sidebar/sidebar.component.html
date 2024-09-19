@@ -1,4 +1,4 @@
-<div class="flex justify-center items-center  ">
+<div class="flex justify-center items-center ">
   <div *ngIf="isOpened" class="fixed inset-0 z-50 overflow-hidden">
     <!-- Sidebar Overlay -->
     <div
@@ -6,9 +6,16 @@
       class="absolute inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
       (click)="toggleDrawer()"
     ></div>
+    
     <!-- Sidebar Content -->
-    <section class="absolute inset-y-0  pl-0 max-w-full flex "
-    [ngClass]="{ 'right-0': position === 'right', 'left-0': position === 'left' }"
+    <section 
+      class="absolute inset-y-0 pl-0 max-w-full flex"
+      [ngClass]="{
+        'right-0': position === 'right',
+        'left-0': position === 'left',
+        'pointer-events-auto scale-100 animate-fade-in-up opacity-100 duration-200 ': isOpened,
+        'pointer-events-none scale-95 animate-fade-in-down  opacity-0 duration-300 ease-in': !isOpened
+      }"
     >
       <div
         *ngIf="isOpened"
@@ -17,7 +24,7 @@
       >
         <div class="h-full flex flex-col py-6 bg-white shadow-xl dark:bg-night-600">
           <!-- Sidebar Header -->
-          <div class="flex items-center justify-between px-4  ">
+          <div class="flex items-center justify-between px-4">
             <h2 class="text-l font-[500] text-black font-poppins capitalize dark:text-white">{{title}}</h2>
             <button
               (click)="toggleDrawer()"

@@ -1,4 +1,4 @@
-<div class="flex-col rounded-lg sm:flex-row w-full">
+<div class="flex-col rounded-lg sm:flex-row w-full mb-4">
   <div class="mb-4 flex items-center justify-between">
     <div class="flex-col items-center">
       <h3 class="text-md font-bold text-gray-900 dark:text-night-50 capitalize">
@@ -25,7 +25,7 @@
             | paginate
               : {
                   id: 'server',
-                  itemsPerPage: 1,
+                  itemsPerPage: perPage,
                   currentPage: page,
                   totalItems: total,
                 }
@@ -37,9 +37,10 @@
   </div>
 </div>
 
-<div class="has-text-centered">
+<div class=" flex justify-center items-center">
   <div class="spinner" [ngClass]="{ hidden: !loading }"></div>
   <pagination-controls
+  class="rounded-full"
     id="server"
     [responsive]="responsive"
     [maxSize]="maxSize"
@@ -51,11 +52,3 @@
 
 <app-add-new [isOpened]="createProduct"
 (closeSidebar)="handleSidebarClose()"></app-add-new>
-<!-- <div class="flex justify-center">
-  <app-image-uploader
-    [width]="'200px'"
-    [height]="'200px'"
-    (imageSelected)="onImageSelected($event)"
-  >
-  </app-image-uploader>
-</div> -->

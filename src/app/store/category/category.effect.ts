@@ -62,7 +62,7 @@ export class CategoryEffect {
         return this._categoryService
           .getAll({
             page: action.page,
-            limit: action.limit || 1,
+            limit: action.limit || 10,
             search: '',
             sortOrder: action.sortOrder || 'ASC',
             relations: ['sub_categories'],

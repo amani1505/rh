@@ -30,22 +30,26 @@ export class CategoryService {
     sortOrder?: string;
     relations?: string[];
   }) {
-    let params = new HttpParams()
-      .set('page', page.toString())
-      .set('limit', limit.toString())
-      .set('sortOrder', sortOrder)
-      .set('relations[]', relations.join(','));
+    try {
+      let params = new HttpParams()
+        .set('page', page.toString())
+        .set('limit', limit.toString())
+        .set('sortOrder', sortOrder)
+        .set('relations[]', relations.join(','));
 
-    if (search) {
-      params = params.set('search', search);
+      if (search) {
+        params = params.set('search', search);
+      }
+      return this._httpClient.get<CategoryInterface>(
+        `${environment.apiUrl}category`,
+
+        {
+          params,
+        },
+      );
+    } catch (error) {
+      throw error;
     }
-    return this._httpClient.get<CategoryInterface>(
-      `${environment.apiUrl}category`,
-
-      {
-        params,
-      },
-    );
   }
   update(id: string, payload: UpdateCategoryDto) {
     return this._httpClient.patch(

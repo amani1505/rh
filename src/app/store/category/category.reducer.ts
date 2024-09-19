@@ -9,9 +9,10 @@ import {
 
 export const category_initial_state: CategoryInterface = {
   data: [],
+  limit: 10,
   current_page: 1,
   total_pages: 1,
-  total_items: 0,
+  total_items: 1,
 };
 
 export const category_reducer = createReducer(

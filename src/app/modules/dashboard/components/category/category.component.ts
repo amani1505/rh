@@ -14,6 +14,7 @@ import { AddNewComponent } from './add-new/add-new.component';
 import { ImageUploaderComponent } from '../shared/image-uploader/image-uploader.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { map } from 'rxjs/operators';
+import { ButtonComponent } from '@components/button/button.component';
 
 @Component({
   selector: 'app-category',
@@ -24,13 +25,14 @@ import { map } from 'rxjs/operators';
     MatDialogModule,
     ImageUploaderComponent,
     NgxPaginationModule,
-    AddNewComponent
-],
+    AddNewComponent,
+    ButtonComponent,
+  ],
   templateUrl: './category.component.html',
   styleUrl: './category.component.scss',
 })
 export class CategoryComponent {
-  @Output() createProduct:boolean = false;
+  @Output() createProduct: boolean = false;
   categories$: Observable<CategoryItemInterface[]> = new Observable();
   responsive: boolean = true;
   autoHide: boolean = true;
@@ -40,11 +42,9 @@ export class CategoryComponent {
   maxSize: number = 7;
   page: number = 1;
   total: number = 10;
+  perPage: number = 1;
 
-  constructor(
-    private _store: Store,
-    private _dialog: MatDialog,
-  ) {}
+  constructor(private _store: Store) {}
 
   ngOnInit() {
     this._store.dispatch(invoke_category_api({ page: this.page }));
@@ -55,25 +55,18 @@ export class CategoryComponent {
 
     this._store.pipe(select(select_categories)).subscribe((response) => {
       this.total = response.total_items;
-      console.log('Current State', response);
       this.page = response.current_page;
+      this.perPage = response.limit;
     });
   }
-  openDialog(opened:boolean) {
-
-    console.log("::Opened 2",opened)
+  openDialog(opened: boolean) {
     this.createProduct = opened;
-    // this._dialog.open(AddNewComponent, {
-    //   width: '90%',
-    //   disableClose: false,
-    // });
   }
 
   handleSidebarClose() {
     this.createProduct = false; // Handle sidebar close event
   }
   getPage(page: number) {
-    console.log('Page', page);
     this._store.dispatch(invoke_category_api({ page: page }));
   }
   onImageSelected(file: File) {

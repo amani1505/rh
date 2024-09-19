@@ -22,6 +22,7 @@ import {
 import { HotToastService } from '@ngneat/hot-toast';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { SidebarComponent } from '@components/sidebar/sidebar.component';
+import { ButtonComponent } from '@components/button/button.component';
 
 @Component({
   selector: 'app-add-new',
@@ -37,6 +38,7 @@ import { SidebarComponent } from '@components/sidebar/sidebar.component';
     MatSidenavModule,
     MatButtonModule,
     SidebarComponent,
+    ButtonComponent
   ],
   providers: [NgToastService],
   templateUrl: './add-new.component.html',
@@ -71,8 +73,16 @@ export class AddNewComponent {
     if (this.categoryForm.invalid || !this.image) {
       this.toast.error('Please fill out the form and upload an image', {
         position: 'top-right',
+        style: {
+          borderLeft: '4px solid #fb7185',
+          padding: '10px',
+          color: '#e11d48',
+          backgroundColor: '#ffe4e6',
+          fontWeight:400,
+          fontSize:'12px'
+        },
       });
-
+    
       return;
     }
     this.loading = true;
@@ -102,7 +112,7 @@ export class AddNewComponent {
           }),
         );
         this.loading = false;
-
+        this.toggleDrawer()
         this.toast.success('successfull saved!!', {
           position: 'top-right',
         });
