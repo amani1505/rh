@@ -9,7 +9,7 @@ import {
 
 export const category_initial_state: CategoryInterface = {
   data: [],
-  limit: 10,
+  limit: 1,
   current_page: 1,
   total_pages: 1,
   total_items: 1,

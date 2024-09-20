@@ -1,8 +1,7 @@
 @use "@angular/material" as mat;
-@use '@ngneat/hot-toast/src/styles/styles.scss';
+@use "@ngneat/hot-toast/src/styles/styles.scss";
 
 @include mat.core();
-  
 
 $dark-palette: (
   50: #e5e7eb,
@@ -124,10 +123,7 @@ $rh-theme: mat.define-light-theme(
   )
 );
 
- @include mat.all-component-themes($rh-theme);
-
-
-
+@include mat.all-component-themes($rh-theme);
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
@@ -241,7 +237,6 @@ $rh-theme: mat.define-light-theme(
   box-sizing: border-box;
   // font-family: "Raleway", sans-serif;
 }
-
 
 html {
   font-family: "Poppins", sans-serif;
@@ -371,4 +366,25 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.my-pagination ::ng-deep .ngx-pagination .current {
+  @apply bg-gray-400 text-white  hover:bg-gray-500 rounded;
+}
+
+.my-pagination ::ng-deep .ngx-pagination .pagination-previous {
+  @apply bg-transparent text-white rounded;
+}
+
+.my-pagination ::ng-deep .ngx-pagination .disabled {
+  @apply bg-transparent text-gray-500  rounded;
+}
+
+.my-pagination ::ng-deep .ngx-pagination .pagination-next .disabled {
+  @apply bg-transparent text-gray-500   rounded;
+}
+
+.my-pagination ::ng-deep .ngx-pagination a,
+.my-pagination ::ng-deep .ngx-pagination button {
+  @apply bg-transparent text-gray-500  bg-gray-200 hover:bg-gray-300 rounded;
 }

@@ -19,7 +19,7 @@ export class CategoryService {
   }
   getAll({
     page = 1,
-    limit = 10,
+    limit = 1,
     search = '',
     sortOrder = 'ASC',
     relations = ['sub_categories'],

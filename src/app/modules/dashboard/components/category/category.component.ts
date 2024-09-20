@@ -15,6 +15,8 @@ import { ImageUploaderComponent } from '../shared/image-uploader/image-uploader.
 import { NgxPaginationModule } from 'ngx-pagination';
 import { map } from 'rxjs/operators';
 import { ButtonComponent } from '@components/button/button.component';
+import { PaginationComponent } from '@components/paginations/pagination/pagination.component';
+import { TablePaginationComponent } from '@components/paginations/table-pagination/table-pagination.component';
 
 @Component({
   selector: 'app-category',
@@ -27,6 +29,8 @@ import { ButtonComponent } from '@components/button/button.component';
     NgxPaginationModule,
     AddNewComponent,
     ButtonComponent,
+    PaginationComponent,
+    TablePaginationComponent,
   ],
   templateUrl: './category.component.html',
   styleUrl: './category.component.scss',
@@ -43,8 +47,17 @@ export class CategoryComponent {
   page: number = 1;
   total: number = 10;
   perPage: number = 1;
+  totalPage: number = 1;
 
-  constructor(private _store: Store) {}
+  constructor(private _store: Store) {
+    this._store.pipe(select(select_categories)).subscribe((response) => {
+      this.total = response.total_items;
+      this.page = response.current_page;
+      this.perPage = response.limit;
+      console.log("Response",response)
+      this.totalPage = response.total_pages;
+    });
+  }
 
   ngOnInit() {
     this._store.dispatch(invoke_category_api({ page: this.page }));
@@ -53,11 +66,7 @@ export class CategoryComponent {
       map((category: CategoryInterface) => category?.data ?? []),
     );
 
-    this._store.pipe(select(select_categories)).subscribe((response) => {
-      this.total = response.total_items;
-      this.page = response.current_page;
-      this.perPage = response.limit;
-    });
+
   }
   openDialog(opened: boolean) {
     this.createProduct = opened;
