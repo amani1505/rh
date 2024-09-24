@@ -135,6 +135,7 @@ module.exports = {
       nunito: ["Nunito Sans", "sans-serif"],
       raleway: ["Raleway"],
       varela: ["Varela Round", "sans-serif"],
+      rubik: ["Rubik", "sans-serif"],
     },
     container: {
       padding: {

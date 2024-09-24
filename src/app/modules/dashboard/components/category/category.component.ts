@@ -17,12 +17,14 @@ import { map } from 'rxjs/operators';
 import { ButtonComponent } from '@components/button/button.component';
 import { PaginationComponent } from '@components/paginations/pagination/pagination.component';
 import { TablePaginationComponent } from '@components/paginations/table-pagination/table-pagination.component';
+import { ClickOutsideDirective } from '@directive/click-outside.directive';
 
 @Component({
   selector: 'app-category',
   standalone: true,
   imports: [
     CommonModule,
+    ClickOutsideDirective,
     ItemComponent,
     MatDialogModule,
     ImageUploaderComponent,
@@ -31,12 +33,13 @@ import { TablePaginationComponent } from '@components/paginations/table-paginati
     ButtonComponent,
     PaginationComponent,
     TablePaginationComponent,
+
   ],
   templateUrl: './category.component.html',
   styleUrl: './category.component.scss',
 })
 export class CategoryComponent {
-  @Output() createProduct: boolean = false;
+  createProduct: boolean = false;
   categories$: Observable<CategoryItemInterface[]> = new Observable();
   responsive: boolean = true;
   autoHide: boolean = true;
@@ -54,7 +57,6 @@ export class CategoryComponent {
       this.total = response.total_items;
       this.page = response.current_page;
       this.perPage = response.limit;
-      console.log("Response",response)
       this.totalPage = response.total_pages;
     });
   }
@@ -65,8 +67,6 @@ export class CategoryComponent {
       select(select_categories),
       map((category: CategoryInterface) => category?.data ?? []),
     );
-
-
   }
   openDialog(opened: boolean) {
     this.createProduct = opened;
@@ -78,8 +78,6 @@ export class CategoryComponent {
   getPage(page: number) {
     this._store.dispatch(invoke_category_api({ page: page }));
   }
-  onImageSelected(file: File) {
-    console.log('Selected file:', file);
-    // Handle the uploaded file as needed
-  }
+
+ 
 }

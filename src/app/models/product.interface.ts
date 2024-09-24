@@ -4,6 +4,7 @@ import { OrderItemInterface } from './order-item.interface';
 import { ProductVariantInterface } from './procuct-variants.interface';
 import { ReviewInterface } from './review.interface';
 import { SubCategoryInterface } from './sub-category.interface';
+import { CategoryInterface } from './category.interface';
 
 export interface ProductInterface {
   id: string;
@@ -11,7 +12,7 @@ export interface ProductInterface {
   description: string;
   price: string;
   quantity: string;
-  category: SubCategoryInterface;
+  category: CategoryInterface;
   brand: string;
   files: Array<FilesInterface>;
   variants: Array<ProductVariantInterface>;

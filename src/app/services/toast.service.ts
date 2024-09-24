@@ -1,4 +1,3 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { HotToastService } from '@ngneat/hot-toast';
 
@@ -16,6 +15,34 @@ export class ToastService {
         padding: '10px',
         color: '#e11d48',
         backgroundColor: '#ffe4e6',
+        fontWeight: 400,
+        fontSize: '12px',
+      },
+    });
+  }
+
+  success(message: string) {
+    this._toast.success(message, {
+      position: 'top-right',
+      style: {
+        borderLeft: '4px solid #4ade80',
+        padding: '10px',
+        color: '#16a34a',
+        backgroundColor: '#dcfce7',
+        fontWeight: 400,
+        fontSize: '12px',
+      },
+    });
+  }
+
+  warning(message: string) {
+    this._toast.success(message, {
+      position: 'top-right',
+      style: {
+        borderLeft: '4px solid #facc15',
+        padding: '10px',
+        color: '#ca8a04',
+        backgroundColor: '#fef9c3',
         fontWeight: 400,
         fontSize: '12px',
       },

@@ -11,10 +11,15 @@ import { MatRippleModule } from '@angular/material/core';
 })
 export class ButtonComponent {
   @Input() size: 'medium' | 'small' | 'large' = 'medium';
-  @Input() color: 'primary' | 'secondary' | 'danger' | 'warning' | 'info' =
-    'primary';
+  @Input() color:
+    | 'primary'
+    | 'secondary'
+    | 'danger'
+    | 'warning'
+    | 'info'
+    | 'normal' = 'normal';
   @Input() variant: 'filled' | 'outlined' = 'filled';
-  @Input()rounded:boolean = false
+  @Input() rounded: boolean = false;
   @Output() onClick = new EventEmitter<void>();
 
   get sizeClasses() {
@@ -28,8 +33,9 @@ export class ButtonComponent {
     }
   }
   get colorClasses() {
-    const baseClass = this.variant === 'outlined' ? 'border bg-transparent' : 'text-white';
-    
+    const baseClass =
+      this.variant === 'outlined' ? 'border bg-transparent' : 'text-white';
+
     switch (this.color) {
       case 'primary':
         return `${baseClass} border-primary-600 ${this.variant !== 'outlined' ? 'bg-primary-500 hover:bg-primary-600' : 'text-primary-700 hover:bg-primary-600'}`;
@@ -41,6 +47,8 @@ export class ButtonComponent {
         return `${baseClass} border-yellow-600 ${this.variant !== 'outlined' ? 'bg-yellow-500 hover:bg-yellow-600' : 'text-yellow-700 hover:bg-yellow-600'}`;
       case 'info':
         return `${baseClass} border-teal-600 ${this.variant !== 'outlined' ? 'bg-teal-500 hover:bg-teal-600' : 'text-teal-700 hover:bg-teal-600'}`;
+      case 'normal':
+        return `${baseClass} border-gray-500 dark:text-night-200 dark:hover:bg-night-500 ${this.variant !== 'outlined' ? 'bg-gray-100 hover:bg-gray-200' : 'text-gray-500 hover:bg-gray-200'}`;
       default:
         return `${baseClass} border-blue-500 ${this.variant !== 'outlined' ? 'bg-blue-100 hover:bg-blue-200' : 'text-blue-700 hover:bg-blue-200'}`;
     }

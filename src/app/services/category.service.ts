@@ -4,25 +4,34 @@ import { CreateCategoryDto } from '@dtos/category/create-category.dto';
 import { UpdateCategoryDto } from '@dtos/category/update-category.dto';
 import { CategoryInterface } from '@model/category.interface';
 import { environment } from 'environments/environment';
+import { ToastService } from './toast.service';
+import { catchError, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CategoryService {
-  constructor(private _httpClient: HttpClient) {}
+  constructor(
+    private _httpClient: HttpClient,
+    private _toast: ToastService,
+  ) {}
 
   create(payload: CreateCategoryDto) {
-    return this._httpClient.post<CategoryInterface>(
-      `${environment.apiUrl}category`,
-      payload,
-    );
+    return this._httpClient
+      .post<CategoryInterface>(`${environment.apiUrl}category`, payload)
+      .pipe(
+        catchError((error) => {
+          this._toast.error(error.message); 
+          return of(null); 
+        }),
+      );
   }
   getAll({
     page = 1,
     limit = 1,
     search = '',
     sortOrder = 'ASC',
-    relations = ['sub_categories'],
+    relations = [],
   }: {
     page?: number;
     limit?: number;
@@ -34,9 +43,12 @@ export class CategoryService {
       let params = new HttpParams()
         .set('page', page.toString())
         .set('limit', limit.toString())
-        .set('sortOrder', sortOrder)
-        .set('relations[]', relations.join(','));
+        .set('sortOrder', sortOrder);
 
+      if (relations.length > 0) {
+        // Only set the relations parameter if the array is not empty
+        params = params.set('relations[]', relations.join(','));
+      }
       if (search) {
         params = params.set('search', search);
       }
@@ -59,6 +71,13 @@ export class CategoryService {
   }
 
   delete(id: string) {
-    return this._httpClient.delete(`${environment.apiUrl}category/${id}`);
+    return this._httpClient.delete(`${environment.apiUrl}category/${id}`).pipe(
+    
+      catchError((error) => {
+  
+        this._toast.error(error.error.message); 
+        return of(null); 
+      }),
+    );
   }
 }

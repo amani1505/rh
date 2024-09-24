@@ -1,11 +1,13 @@
 import { SubCategoryInterface } from './sub-category.interface';
+import { ProductInterface } from './product.interface';
 
 export interface CategoryItemInterface {
   id: string;
   category_name: string;
   description: string;
-  sub_categories: Array<SubCategoryInterface>;
+  products: Array<ProductInterface>;
   image: string;
+  isPublished: boolean;
   created_at: Date;
   updated_at: Date;
 }
