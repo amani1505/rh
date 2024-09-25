@@ -2,7 +2,7 @@
   <div class="mx-1 mb-2 flex items-center justify-between">
     <small
       [ngClass]="{ hidden: !menuService.showSideBar }"
-      class="text-xs font-semibold text-gray-400 dark:text-night-200"
+      class="text-xs font-semibold font-rubik  text-gray-400 dark:text-night-200"
     >
       {{ menu.group }}
     </small>
@@ -41,7 +41,7 @@
             <a
               routerLinkActive="text-primary-500"
               [routerLinkActiveOptions]="{exact:true}"
-              class="ml-10 truncate text-xs font-semibold tracking-wide focus:outline-none capitalize"
+              class="ml-10 truncate text-xs font-rubik font-[500] tracking-wide focus:outline-none capitalize"
             >
               {{ item.label }}
             </a>
@@ -54,7 +54,7 @@
             class="flex h-9 cursor-pointer items-center justify-start rounded hover:bg-gray-100 dark:hover:bg-night-600"
           >
             <a
-              class="ml-10 truncate text-xs font-semibold tracking-wide text-gray-600 focus:outline-none dark:text-night-100 capitalize"
+              class="ml-10 truncate text-xs font-rubik font-[500] tracking-wide text-gray-600 focus:outline-none dark:text-night-100 capitalize"
             >
               {{ item.label }}
             </a>
@@ -80,7 +80,7 @@
         <!-- Tooltip -->
         <div class="fixed w-full" *ngIf="!menuService.showSideBar">
           <span
-            class="z-1 absolute left-14 -top-[34px] w-auto min-w-max origin-left scale-0 rounded-md bg-black p-2 text-xs font-bold text-white shadow-md transition-all duration-200 group-hover:scale-100 dark:bg-white dark:text-night-900 capitalize"
+            class="z-1 absolute left-14 -top-[34px] w-auto min-w-max origin-left scale-0 rounded-md bg-black p-2 text-xs font-rubik font-[500] text-white shadow-md transition-all duration-200 group-hover:scale-100 dark:bg-white dark:text-night-900 capitalize"
           >
             {{ item.label }}
           </span>

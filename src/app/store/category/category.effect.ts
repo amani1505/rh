@@ -130,11 +130,11 @@ export class CategoryEffect {
             return delete_category_success({ id: action.id });
           }),
           catchError(error => {
-            this._toast.error(error.message); // Show error toast
+            this._toast.error(error.message); 
             this._appStore.dispatch(set_api_status({
               api_status: { api_response_message: 'Failed to delete category', api_status: 'error' },
             }));
-            return EMPTY; // Or handle this as needed
+            return EMPTY; 
           })
         );
       }),

@@ -26,7 +26,7 @@
             [routerLink]="sub.route"
             routerLinkActive="text-primary-500"
             [routerLinkActiveOptions]="{ exact: true }"
-            class="inline-block w-full px-4 py-2 text-xs font-semibold capitalize"
+            class="inline-block w-full px-4 py-2 text-xs font-rubik font-[500] capitalize"
           >
             {{ sub.label }}
           </a>
@@ -35,7 +35,7 @@
         <!-- Child Menu -->
         <ng-template #childMenu let-sub="sub">
           <a
-            class="inline-block w-full cursor-pointer px-4 py-2 text-xs font-semibold capitalize"
+            class="inline-block w-full cursor-pointer px-4 py-2 text-xs font-rubik font-[500] capitalize"
           >
             {{ sub.label }}
           </a>

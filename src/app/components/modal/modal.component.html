@@ -10,9 +10,10 @@
         <h2 class="text-xl font-semibold font-rubik text-gray-700 dark:text-night-50 ">{{title}}</h2>
       </div>
       <div class="p-6">
-        <p class="text-gray-700  dark:text-night-50 font-raleway">
+        <p class="text-gray-700  dark:text-night-50 font-rubik font-[500]">
       {{content}}
         </p>
+        <p class="text-md my-3 font-raleway dark:text-night-50"><span class="text-red-600 font-[500] font-rubik">Note:: </span>{{subContent}}</p>
       </div>
       <div class="flex justify-end items-center gap-3  p-3 border-t">
         <Button size="medium" color="danger" (onClick)="closeModal()">cancel</Button>

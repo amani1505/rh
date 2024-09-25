@@ -30,6 +30,7 @@ export class ModalComponent {
   @Input() isOpen: boolean = false;
   @Input({ required: true }) content: string = '';
   @Input({ required: true }) title: string = '';
+  @Input({required:true}) subContent:string=''
   @Input() loading: boolean = false;
   @Output() closeModalEvent = new EventEmitter<void>();
   @Output() submit = new EventEmitter<void>();
