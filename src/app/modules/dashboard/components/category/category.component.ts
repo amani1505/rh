@@ -18,6 +18,7 @@ import { ButtonComponent } from '@components/button/button.component';
 import { PaginationComponent } from '@components/paginations/pagination/pagination.component';
 import { TablePaginationComponent } from '@components/paginations/table-pagination/table-pagination.component';
 import { ClickOutsideDirective } from '@directive/click-outside.directive';
+import { MultiSelectComponent } from 'app/compontents/form/select/multi-select/multi-select.component';
 
 @Component({
   selector: 'app-category',
@@ -33,7 +34,7 @@ import { ClickOutsideDirective } from '@directive/click-outside.directive';
     ButtonComponent,
     PaginationComponent,
     TablePaginationComponent,
-
+    MultiSelectComponent,
   ],
   templateUrl: './category.component.html',
   styleUrl: './category.component.scss',
@@ -51,6 +52,131 @@ export class CategoryComponent {
   total: number = 10;
   perPage: number = 1;
   totalPage: number = 1;
+  options: Array<string> = [
+    "Electronics",
+    "Fashion",
+    "Home & Kitchen",
+    "Health & Beauty",
+    "Sports & Outdoors",
+    "Toys & Games",
+    "Books",
+    "Movies & Music",
+    "Automotive",
+    "Pet Supplies",
+    "Grocery & Gourmet Food",
+    "Office Supplies",
+    "Baby Products",
+    "Jewelry",
+    "Watches",
+    "Luggage & Travel Gear",
+    "Tools & Home Improvement",
+    "Garden & Outdoor",
+    "Furniture",
+    "Appliances",
+    "Industrial & Scientific",
+    "Musical Instruments",
+    "Software",
+    "Video Games",
+    "Art & Craft Supplies",
+    "Cameras & Photography",
+    "Cell Phones & Accessories",
+    "Computers & Accessories",
+    "Smart Home Devices",
+    "Stationery & Party Supplies",
+    "Shoes",
+    "Handbags & Wallets",
+    "Personal Care Appliances",
+    "Fitness & Exercise",
+    "Camping & Hiking",
+    "Cycling",
+    "Water Sports",
+    "Winter Sports",
+    "Outdoor Recreation",
+    "Board Games",
+    "Puzzles",
+    "Collectibles",
+    "Hobbies",
+    "Model Building",
+    "Drones",
+    "3D Printers",
+    "Car Electronics",
+    "Motorcycle Accessories",
+    "RV Parts & Accessories",
+    "Marine Electronics",
+    "GPS & Navigation",
+    "Medical Supplies",
+    "Safety & Security",
+    "Green & Eco-Friendly Products",
+    "Wine & Spirits",
+    "Bakery & Pastry Supplies",
+    "Meat & Seafood",
+    "Dairy & Eggs",
+    "Coffee, Tea & Beverages",
+    "Organic & Natural Food",
+    "Catering & Restaurant Supplies",
+    "Specialty & Gourmet Food",
+    "Men's Clothing",
+    "Women's Clothing",
+    "Kids' Clothing",
+    "Footwear",
+    "Sportswear",
+    "Eyewear",
+    "Hats & Caps",
+    "Belts & Suspenders",
+    "Socks & Hosiery",
+    "Underwear & Lingerie",
+    "Sleepwear & Robes",
+    "Costumes & Accessories",
+    "Wedding & Party Supplies",
+    "Home Decor",
+    "Bedding & Linens",
+    "Bath & Shower Products",
+    "Kitchen & Dining",
+    "Small Appliances",
+    "Cookware",
+    "Bakeware",
+    "Cutlery",
+    "Tableware",
+    "Glassware & Drinkware",
+    "Home Storage & Organization",
+    "Cleaning Supplies",
+    "Laundry Supplies",
+    "Lighting",
+    "Smart Lighting",
+    "Wall Art & Posters",
+    "Photo Frames & Albums",
+    "Rugs, Pads & Protectors",
+    "Curtains & Window Treatments",
+    "Home Safety & Security",
+    "Baby Gear",
+    "Diapering",
+    "Feeding",
+    "Nursery",
+    "Strollers & Accessories",
+    "Car Seats",
+    "Toys & Learning",
+    "Baby & Toddler Toys",
+    "Parenting Books",
+    "Men's Grooming",
+    "Women's Beauty",
+    "Hair Care",
+    "Skin Care",
+    "Makeup",
+    "Fragrances",
+    "Nail Care",
+    "Bath & Body",
+    "Health Care",
+    "Vitamins & Supplements",
+    "Medical Equipment",
+    "Personal Care",
+    "Weight Management",
+    "Sexual Wellness",
+    "Hearing Aids",
+    "Orthopedic Supplies",
+    "Dental Care",
+    "Massage Tools & Equipment",
+    "Aromatherapy"
+  ];
 
   constructor(private _store: Store) {
     this._store.pipe(select(select_categories)).subscribe((response) => {
@@ -79,5 +205,15 @@ export class CategoryComponent {
     this._store.dispatch(invoke_category_api({ page: page }));
   }
 
- 
+  onSearch(searchTerm: string) {
+    console.log('Search Term Parent component', searchTerm);
+    this.options.filter((option) => {
+      console.log('Optionssss', option);
+     const optioin = option.toLowerCase().includes(searchTerm.toLowerCase());
+
+     console.log('Option', optioin);
+     return optioin
+     return
+    });
+  }
 }

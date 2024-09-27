@@ -18,12 +18,10 @@
     </button>
   </div>
 
- 
-
   <div class="relative">
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
       <div
-        class="relative bg-white rounded-lg py-3 px-4 dark:bg-night-700 "
+        class="relative bg-white rounded-lg py-3 px-4 dark:bg-night-700"
         *ngFor="
           let category of (categories$ | async) ?? []
             | paginate
@@ -60,3 +58,5 @@
   [isOpened]="createProduct"
   (closeSidebar)="handleSidebarClose()"
 ></app-add-new>
+
+<MultiSelect [options]="options" (search)="onSearch($event)" />
