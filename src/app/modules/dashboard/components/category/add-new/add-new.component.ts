@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
-import { ImageUploaderComponent } from '@dashboard/components/shared/image-uploader/image-uploader.component';
+import { ImageUploaderComponent } from '@components/image-uploader/image-uploader.component';
 import { CommonModule } from '@angular/common';
 import {
   FormBuilder,

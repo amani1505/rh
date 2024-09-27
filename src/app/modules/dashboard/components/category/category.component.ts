@@ -11,7 +11,7 @@ import { select_categories } from 'app/store/category/category.selector';
 import { CommonModule } from '@angular/common';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { AddNewComponent } from './add-new/add-new.component';
-import { ImageUploaderComponent } from '../shared/image-uploader/image-uploader.component';
+import { ImageUploaderComponent } from '../../../../components/image-uploader/image-uploader.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { map } from 'rxjs/operators';
 import { ButtonComponent } from '@components/button/button.component';
