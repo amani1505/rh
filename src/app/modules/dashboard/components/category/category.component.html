@@ -58,23 +58,3 @@
   [isOpened]="createProduct"
   (closeSidebar)="handleSidebarClose()"
 ></app-add-new>
-
-<div class="grid grid-cols-3 gap-3">
-  <MultiSelect
-    [options]="options"
-    (search)="onSearch($event)"
-    (selectionChange)="handleMultipleSelection($event)"
-    [placeholder]="'Select variants'"
-  />
-  <SeachableSelect
-    [options]="options"
-    (search)="onSearch($event)"
-    (selectionChange)="handleSeachableSelection($event)"
-    [placeholder]="'Select category'"
-  />
-  <NormalSelect
-    [options]="options"
-    (selectionChange)="handleSelection($event)"
-    [placeholder]="'Pages'"
-  />
-</div>
