@@ -13,7 +13,14 @@ import {
   save_category_api_success,
   update_category_api_sucess,
 } from './category.action';
-import { catchError, EMPTY, map, mergeMap, switchMap, withLatestFrom } from 'rxjs';
+import {
+  catchError,
+  EMPTY,
+  map,
+  mergeMap,
+  switchMap,
+  withLatestFrom,
+} from 'rxjs';
 import { set_api_status } from 'app/shared/store/app.action';
 import { select_categories } from './category.selector';
 import { ToastService } from '@services/toast.service';
@@ -28,7 +35,6 @@ export class CategoryEffect {
     private _store: Store,
     private _appStore: Store<AppStateInterface>,
     private _toast: ToastService,
-
   ) {}
 
   save$ = createEffect(() => {
@@ -97,6 +103,7 @@ export class CategoryEffect {
           .update(action.id, action.update_category)
           .pipe(
             map((data) => {
+              this._toast.success('Category Updated successfully!');
               this._appStore.dispatch(
                 set_api_status({
                   api_status: {
@@ -105,9 +112,19 @@ export class CategoryEffect {
                   },
                 }),
               );
-              return update_category_api_sucess({
-                update_category: data,
-              });
+              return update_category_api_sucess({ update_category: data });
+            }),
+            catchError((error) => {
+              this._toast.error(error.message);
+              this._appStore.dispatch(
+                set_api_status({
+                  api_status: {
+                    api_response_message: 'Failed to delete category',
+                    api_status: 'error',
+                  },
+                }),
+              );
+              return EMPTY;
             }),
           );
       }),
@@ -117,25 +134,34 @@ export class CategoryEffect {
   delete$ = createEffect(() => {
     return this._actions$.pipe(
       ofType(invoke_delete_category_api),
-      switchMap(action => {
-        this._appStore.dispatch(set_api_status({
-          api_status: { api_response_message: '', api_status: '' },
-        }));
+      switchMap((action) => {
+        this._appStore.dispatch(
+          set_api_status({
+            api_status: { api_response_message: '', api_status: '' },
+          }),
+        );
         return this._categoryService.delete(action.id).pipe(
           map(() => {
-            this._toast.success('Category deleted successfully!'); 
-            this._appStore.dispatch(set_api_status({
-              api_status: { api_response_message: '', api_status: 'success' },
-            }));
+            this._toast.success('Category deleted successfully!');
+            this._appStore.dispatch(
+              set_api_status({
+                api_status: { api_response_message: '', api_status: 'success' },
+              }),
+            );
             return delete_category_success({ id: action.id });
           }),
-          catchError(error => {
-            this._toast.error(error.message); 
-            this._appStore.dispatch(set_api_status({
-              api_status: { api_response_message: 'Failed to delete category', api_status: 'error' },
-            }));
-            return EMPTY; 
-          })
+          catchError((error) => {
+            this._toast.error(error.message);
+            this._appStore.dispatch(
+              set_api_status({
+                api_status: {
+                  api_response_message: 'Failed to delete category',
+                  api_status: 'error',
+                },
+              }),
+            );
+            return EMPTY;
+          }),
         );
       }),
     );

@@ -7,28 +7,23 @@ export class Menu {
         {
           icon: 'assets/icons/heroicons/solid/chart-pie.svg',
           label: 'Dashboard',
-          route: '/admin/dashboard',
+          route: '/admin/',
         },
-       
+
         {
           icon: 'assets/icons/heroicons/solid/shopping-bag.svg',
           label: 'products',
-          route: '/admin/dashboard/product',
+          route: '/admin/product',
           children: [
             {
               icon: 'assets/icons/heroicons/solid/users.svg',
               label: 'products',
-              route: '/admin/dashboard/product',
-            },
-            {
-              icon: 'assets/icons/heroicons/solid/users.svg',
-              label: 'variants',
-              route: '/admin/dashboard/product/variants',
+              route: '/admin/product',
             },
             {
               icon: 'assets/icons/heroicons/solid/users.svg',
               label: 'category',
-              route: '/admin/dashboard/product/category',
+              route: '/admin/product/category',
             },
           ],
         },

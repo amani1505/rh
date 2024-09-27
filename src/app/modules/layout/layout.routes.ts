@@ -2,11 +2,10 @@ import { Routes } from '@angular/router';
 import { LayoutComponent } from './layout.component';
 import { provideState } from '@ngrx/store';
 import { app_reducer } from 'app/shared/store/app.reducer';
-import { StoreModule } from '@ngrx/store';
 
 export default [
   {
-    path: 'dashboard',
+    path: '',
     component: LayoutComponent,
     loadChildren: () => import('./../dashboard/dashboard.routes'),
     providers: [provideState({ name: 'app_state', reducer: app_reducer })],

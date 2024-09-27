@@ -15,10 +15,12 @@ import { IconButtonComponent } from '@components/button/icon-button/icon-button.
 import { ModalComponent } from '@components/modal/modal.component';
 import { select, Store } from '@ngrx/store';
 import { AppStateInterface } from '@model/app-state';
-import { invoke_delete_category_api } from 'app/store/category/category.action';
+import {
+  invoke_delete_category_api,
+  invoke_update_category_api,
+} from 'app/store/category/category.action';
 import { selectAppState } from 'app/shared/store/app.selector';
 import { set_api_status } from 'app/shared/store/app.action';
-
 
 @Component({
   selector: '[cartegory-table-item]',
@@ -45,7 +47,6 @@ export class ItemComponent {
   constructor(
     private _store: Store,
     private _appStore: Store<AppStateInterface>,
-    
   ) {}
   openModal() {
     this.isModalOpen = true;
@@ -62,12 +63,29 @@ export class ItemComponent {
           }),
         );
         this.loading = false;
-        
+
         this.closeModal();
-      }
-      else if(apState.api_status == 'error'){
+      } else if (apState.api_status == 'error') {
         this.loading = false;
         this.closeModal();
+      }
+    });
+  }
+  publication(id: string, isPublished: boolean) {
+    this._store.dispatch(
+      invoke_update_category_api({
+        id,
+        update_category: { isPublished: !isPublished },
+      }),
+    );
+    let apiStatus$ = this._appStore.pipe(select(selectAppState));
+    apiStatus$.subscribe((apState) => {
+      if (apState.api_status == 'success') {
+        this._appStore.dispatch(
+          set_api_status({
+            api_status: { api_response_message: '', api_status: '' },
+          }),
+        );
       }
     });
   }

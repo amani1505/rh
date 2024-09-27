@@ -21,8 +21,8 @@ export class CategoryService {
       .post<CategoryInterface>(`${environment.apiUrl}category`, payload)
       .pipe(
         catchError((error) => {
-          this._toast.error(error.message); 
-          return of(null); 
+          this._toast.error(error.message);
+          return of(null);
         }),
       );
   }
@@ -64,19 +64,21 @@ export class CategoryService {
     }
   }
   update(id: string, payload: UpdateCategoryDto) {
-    return this._httpClient.patch(
-      `${environment.apiUrl}category/${id}`,
-      payload,
-    );
+    return this._httpClient
+      .patch(`${environment.apiUrl}category/${id}`, payload)
+      .pipe(
+        catchError((error) => {
+          this._toast.error(error.error.message);
+          return of(null);
+        }),
+      );
   }
 
   delete(id: string) {
     return this._httpClient.delete(`${environment.apiUrl}category/${id}`).pipe(
-    
       catchError((error) => {
-  
-        this._toast.error(error.error.message); 
-        return of(null); 
+        this._toast.error(error.error.message);
+        return of(null);
       }),
     );
   }
