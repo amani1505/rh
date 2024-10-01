@@ -9,7 +9,7 @@ import {
 import { AngularSvgIconModule } from 'angular-svg-icon';
 
 @Component({
-  selector: 'app-image-uploader',
+  selector: 'image-uploader',
   standalone: true,
   imports: [CommonModule,AngularSvgIconModule],
   templateUrl: './image-uploader.component.html',

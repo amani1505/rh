@@ -1,5 +1,5 @@
 <div
-  class="relative flex items-center justify-center rounded-md bg-gray-400 dark:bg-night-600 border border-dashed"
+  class="relative flex items-center justify-center rounded-md bg-gray-50 hover:bg-gray-100 dark:bg-night-300 border border-dashed cursor-pointer"
   [ngClass]="{ 'border-none': currentImage }"
   [style.width]="width"
   [style.height]="height"
@@ -7,6 +7,7 @@
   (drop)="onDrop($event)"
   (dragover)="onDragOver($event)"
   (dragleave)="onDragLeave($event)"
+ 
 >
   <!-- Display selected image -->
   <img
@@ -20,29 +21,29 @@
 
   <!-- Centered text and upload button -->
   <div
-    class="flex flex-col items-center justify-center text-center absolute inset-0"
+    class="flex flex-col items-center justify-center absolute inset-0 text-neutral-600 px-2 font-raleway "
     *ngIf="!currentImage"
   >
     <svg-icon
-      src="./assets/images/uploader.svg"
-      [svgClass]="'h-14 w-14 text-primary-300'"
+      src="./assets/icons/heroicons/outline/photo.svg"
+      [svgClass]="'w-6 h-6'"
+      class="inline-block dark:text-night-50"
     >
     </svg-icon>
-    <span class="text-sm text-white">Drag an image here or</span>
-    <span
-      class="hover:underline cursor-pointer text-sm font-varela text-sky-500 hover:text-sky-700"
-      (click)="fileInput.click()"
+    <span class="text-[9px] dark:text-night-50 text-center"
+      >Drag your image here or
+      <span class="underline cursor-pointer  text-blue-700 text-center"  (click)="fileInput.click()">
+        click to browser
+      </span></span
     >
-      upload a file
-    </span>
   </div>
   <button
     *ngIf="currentImage"
     (click)="deleteImage()"
-    class="absolute bottom-2 right-2 bg-red-600 text-white rounded-full p-1 hover:bg-red-700"
+    class="absolute flex items-center  bottom-2 right-2 bg-red-600 text-white rounded-full p-1 hover:bg-red-700"
   >
     <svg-icon
-      src="./assets/icons/heroicons/trush-outline.svg"
+      src="./assets/icons/heroicons/outline/trash.svg"
       [svgClass]="'w-4 h-4'"
     >
     </svg-icon>

@@ -266,7 +266,7 @@ body {
   }
 }
 body::-webkit-scrollbar {
-  width: 15px;
+  width: 7px;
 }
 
 body::-webkit-scrollbar-track {
@@ -276,7 +276,7 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
   background: hsl(0, 0%, 80%);
-  border: 3px solid var(--white);
+ 
   border-radius: 10px;
 }
 
@@ -289,13 +289,13 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .has-scrollbar::-webkit-scrollbar {
-  width: 12px; /* for vertical scroll */
-  height: 12px; /* for horizontal scroll */
+  width: 5px; /* for vertical scroll */
+  height: 5px; /* for horizontal scroll */
 }
 
 .has-scrollbar::-webkit-scrollbar-thumb {
   background: transparent;
-  border: 3px solid var(--white);
+
   border-radius: 20px;
 }
 

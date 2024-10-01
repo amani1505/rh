@@ -5,12 +5,12 @@
 >
   <form action="" [formGroup]="categoryForm">
     <div class="flex justify-center">
-      <app-image-uploader
+      <image-uploader
         [width]="'200px'"
         [height]="'200px'"
         (imageSelected)="onImageSelected($event)"
       >
-      </app-image-uploader>
+      </image-uploader>
     </div>
     <div class="grid grid-cols-1 gap-3 my-4">
       <p>

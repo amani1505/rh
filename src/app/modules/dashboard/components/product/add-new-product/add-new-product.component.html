@@ -1,3 +1,45 @@
-<div class="flex-col rounded-lg sm:flex-row w-full mb-4">
-  <p>add-new-product works!</p>
+<div class="px-4 py-2">
+  <h3
+    class="text-md font-semibold text-gray-900 dark:text-night-50 capitalize font-rubik"
+  >
+    create new product
+  </h3>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div class=" ">
+      <div class="shadow rounded-xl  bg-white dark:bg-night-600">
+        <div
+          class="font-rubik text-gray-900 dark:text-night-50 font-[400] p-2 text-xm capitalize leading-relaxed border-b border-gray-300 dark:border-night-50"
+        >
+          Product image
+        </div>
+        <div class="p-5" >
+          <div class="flex overflow-x-auto has-scrollbar gap-2 ">
+            <image-uploader [width]="'130px'" [height]="'130px'"></image-uploader>
+            <image-uploader [width]="'130px'" [height]="'130px'"></image-uploader>
+            <image-uploader [width]="'130px'" [height]="'130px'"></image-uploader>
+            <image-uploader [width]="'130px'" [height]="'130px'"></image-uploader>
+          </div>
+          <div class="flex items-center gap-2 text-wrap mt-2 dark:text-night-50">
+            <div>
+              <svg-icon
+              src="./assets/icons/heroicons/outline/information-circle.svg"
+              [svgClass]="'w-4 h-4'"
+            >
+            </svg-icon>
+            </div>
+            <div class="font-rubik text-[12px]">
+              <p>You need atleast 4 images.Pay attention to the quality of the picture you add (important)</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="shadow"></div>
+    </div>
+    <div
+      class="rounded-md col-span-2 border border-gray-300 dark:text-night-50"
+    >
+      2
+    </div>
+  </div>
 </div>
