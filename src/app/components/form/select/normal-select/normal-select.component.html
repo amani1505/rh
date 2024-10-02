@@ -8,12 +8,9 @@
   >
     <span class="text-gray-400">{{ selectedOption || placeholder }}</span>
     <svg-icon
-    [ngClass]="{
-      'rotate-90': dropdownOpen,
-    }"
-    src="assets/icons/heroicons/solid/chevron-right.svg"
-    [svgClass]="'h-4 w-4 transition ease-out duration-300 delay-300'"
-  ></svg-icon>
+      src="assets/icons/heroicons/solid/chevron-down.svg"
+      [svgClass]="'h-4 w-4 transition ease-out duration-300 delay-300'"
+    ></svg-icon>
   </button>
 
   <!-- Dropdown Menu -->
@@ -25,7 +22,7 @@
       <a
         *ngFor="let option of options"
         (click)="selectOption(option)"
-        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer"
       >
         {{ option }}
       </a>

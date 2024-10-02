@@ -1,45 +1,110 @@
 <div class="px-4 py-2">
   <h3
-    class="text-md font-semibold text-gray-900 dark:text-night-50 capitalize font-rubik"
+    class="text-md font-semibold text-gray-900 dark:text-night-50 capitalize font-rubik mb-5 "
   >
     create new product
   </h3>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
     <div class=" ">
-      <div class="shadow rounded-xl  bg-white dark:bg-night-600">
+      <div class="shadow rounded-xl bg-white dark:bg-night-600">
         <div
           class="font-rubik text-gray-900 dark:text-night-50 font-[400] p-2 text-xm capitalize leading-relaxed border-b border-gray-300 dark:border-night-50"
         >
           Product image
         </div>
-        <div class="p-5" >
-          <div class="flex overflow-x-auto has-scrollbar gap-2 ">
-            <image-uploader [width]="'130px'" [height]="'130px'"></image-uploader>
-            <image-uploader [width]="'130px'" [height]="'130px'"></image-uploader>
-            <image-uploader [width]="'130px'" [height]="'130px'"></image-uploader>
-            <image-uploader [width]="'130px'" [height]="'130px'"></image-uploader>
+        <div class="p-5">
+          <div class="flex overflow-x-auto has-scrollbar gap-2">
+            <image-uploader
+              [width]="'130px'"
+              [height]="'130px'"
+            ></image-uploader>
+            <image-uploader
+              [width]="'130px'"
+              [height]="'130px'"
+            ></image-uploader>
+            <image-uploader
+              [width]="'130px'"
+              [height]="'130px'"
+            ></image-uploader>
+            <image-uploader
+              [width]="'130px'"
+              [height]="'130px'"
+            ></image-uploader>
           </div>
-          <div class="flex items-center gap-2 text-wrap mt-2 dark:text-night-50">
+          <div
+            class="flex items-center gap-2 text-wrap mt-2 dark:text-night-50"
+          >
             <div>
               <svg-icon
-              src="./assets/icons/heroicons/outline/information-circle.svg"
-              [svgClass]="'w-4 h-4'"
-            >
-            </svg-icon>
+                src="./assets/icons/heroicons/outline/information-circle.svg"
+                [svgClass]="'w-4 h-4'"
+              >
+              </svg-icon>
             </div>
             <div class="font-rubik text-[12px]">
-              <p>You need atleast 4 images.Pay attention to the quality of the picture you add (important)</p>
+              <p>
+                You need atleast 4 images.Pay attention to the quality of the
+                picture you add (important)
+              </p>
             </div>
-
           </div>
         </div>
       </div>
-      <div class="shadow"></div>
+      <div class="shadow rounded-xl bg-white dark:bg-night-600 mt-4">
+        <div
+          class="font-rubik text-gray-900 dark:text-night-50 font-[400] p-2 text-xm capitalize leading-relaxed border-b border-gray-300 dark:border-night-50"
+        >
+          Status
+        </div>
+        <div class="p-5">
+          <NormalSelect  [options]="['draft','publish']" [placeholder]="'select status'"/>
+        </div>
+      </div>
     </div>
-    <div
-      class="rounded-md col-span-2 border border-gray-300 dark:text-night-50"
-    >
-      2
+    <div class=" col-span-2">
+      <div class="shadow rounded-xl bg-white dark:bg-night-600">
+        <div
+          class="font-rubik text-gray-900 dark:text-night-50 font-[400] p-2 text-xm capitalize leading-relaxed border-b border-gray-300 dark:border-night-50"
+        >
+          Product image
+        </div>
+        <div class="p-5">
+          <div class="flex overflow-x-auto has-scrollbar gap-2">
+          <div class="rounded-md bg-gray-50 hover:bg-gray-100 dark:bg-night-300 border  cursor-pointer">
+            <div class="w-16 h-16 rounded-md bg-gray-200 p-1 float-left mr-2 ">
+              <img
+                [src]=""
+                alt="category"
+                class="rounded-md w-full h-full object-cover"
+              />
+            </div>
+
+          </div>
+          </div>
+          <div
+            class="flex items-center gap-2 text-wrap mt-2 dark:text-night-50"
+          >
+            <div>
+              <svg-icon
+                src="./assets/icons/heroicons/outline/information-circle.svg"
+                [svgClass]="'w-4 h-4'"
+              >
+              </svg-icon>
+            </div>
+            <div class="font-rubik text-[12px]">
+              <p>
+                You need atleast 4 images.Pay attention to the quality of the
+                picture you add (important)
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      
     </div>
   </div>
 </div>
